@@ -26,11 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
         let controller = masterNavigationController.topViewController as MasterViewController
         controller.managedObjectContext = self.managedObjectContext
 
-        var result = [AFNetworkReachabilityManager .sharedManager()]
-
-
-
-
         return true
     }
 
