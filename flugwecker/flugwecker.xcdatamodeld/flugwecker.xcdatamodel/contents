@@ -1,9 +1,55 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model name="Test1.xcdatamodel" userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date"/>
+<model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="6220.8" systemVersion="13E28" minimumToolsVersion="Automatic" macOSVersion="Automatic" iOSVersion="Automatic">
+    <entity name="Airport" representedClassName="Airport" syncable="YES">
+        <attribute name="airport_name_de" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="airport_name_gb" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="altitude" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="city" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="continent" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="counterFlights" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="country" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="image" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="flightConnectionDestinations" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FlightConnection" inverseName="destination" inverseEntity="FlightConnection" syncable="YES"/>
+        <relationship name="flightConnectionOrigins" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="FlightConnection" inverseName="origin" inverseEntity="FlightConnection" syncable="YES"/>
+        <relationship name="region" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Region" inverseName="airports" inverseEntity="Region" syncable="YES"/>
+    </entity>
+    <entity name="Flight" representedClassName="Flight" syncable="YES">
+        <attribute name="departureDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="price" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <attribute name="returnDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="service" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="url" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="flightConnection" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="FlightConnection" inverseName="flights" inverseEntity="FlightConnection" syncable="YES"/>
+    </entity>
+    <entity name="FlightConnection" representedClassName="FlightConnection" syncable="YES">
+        <attribute name="minPrice" optional="YES" attributeType="Float" defaultValueString="0.0" syncable="YES"/>
+        <relationship name="destination" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="flightConnectionDestinations" inverseEntity="Airport" syncable="YES"/>
+        <relationship name="flights" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Flight" inverseName="flightConnection" inverseEntity="Flight" syncable="YES"/>
+        <relationship name="origin" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Airport" inverseName="flightConnectionOrigins" inverseEntity="Airport" syncable="YES"/>
+    </entity>
+    <entity name="Region" representedClassName="Region" syncable="YES">
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="airports" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Airport" inverseName="region" inverseEntity="Airport" syncable="YES"/>
+    </entity>
+    <entity name="Trip" syncable="YES">
+        <attribute name="destinations" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="endDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="objectId" optional="YES" attributeType="Integer 64" defaultValueString="0" syncable="YES"/>
+        <attribute name="origins" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="regions" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="startDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="updatedAt" optional="YES" attributeType="Date" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Region" positionX="261" positionY="198" width="128" height="88"/>
+        <element name="Trip" positionX="270" positionY="207" width="128" height="150"/>
+        <element name="Flight" positionX="288" positionY="216" width="128" height="133"/>
+        <element name="FlightConnection" positionX="306" positionY="234" width="128" height="103"/>
+        <element name="Airport" positionX="324" positionY="252" width="128" height="268"/>
     </elements>
 </model>
