@@ -34,6 +34,20 @@
                ReferencedContainer = "container:flugwecker.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "YES"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "YES">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FD650CCB1994E1F600E255B0"
+               BuildableName = "Integration Tests.xctest"
+               BlueprintName = "Integration Tests"
+               ReferencedContainer = "container:flugwecker.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -49,6 +63,16 @@
                BlueprintIdentifier = "FDFF61C61994BEFD005CAC28"
                BuildableName = "flugweckerTests.xctest"
                BlueprintName = "flugweckerTests"
+               ReferencedContainer = "container:flugwecker.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FD650CCB1994E1F600E255B0"
+               BuildableName = "Integration Tests.xctest"
+               BlueprintName = "Integration Tests"
                ReferencedContainer = "container:flugwecker.xcodeproj">
             </BuildableReference>
          </TestableReference>

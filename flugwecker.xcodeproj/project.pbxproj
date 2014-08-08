@@ -7,6 +7,41 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD650CA11994DC4D00E255B0 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C7D1994DC4C00E255B0 /* AFHTTPRequestOperation.m */; };
+		FD650CA21994DC4D00E255B0 /* AFHTTPRequestOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C7D1994DC4C00E255B0 /* AFHTTPRequestOperation.m */; };
+		FD650CA31994DC4D00E255B0 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C7F1994DC4C00E255B0 /* AFHTTPRequestOperationManager.m */; };
+		FD650CA41994DC4D00E255B0 /* AFHTTPRequestOperationManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C7F1994DC4C00E255B0 /* AFHTTPRequestOperationManager.m */; };
+		FD650CA51994DC4D00E255B0 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C811994DC4C00E255B0 /* AFHTTPSessionManager.m */; };
+		FD650CA61994DC4D00E255B0 /* AFHTTPSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C811994DC4C00E255B0 /* AFHTTPSessionManager.m */; };
+		FD650CA71994DC4D00E255B0 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C841994DC4C00E255B0 /* AFNetworkReachabilityManager.m */; };
+		FD650CA81994DC4D00E255B0 /* AFNetworkReachabilityManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C841994DC4C00E255B0 /* AFNetworkReachabilityManager.m */; };
+		FD650CA91994DC4D00E255B0 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C861994DC4C00E255B0 /* AFSecurityPolicy.m */; };
+		FD650CAA1994DC4D00E255B0 /* AFSecurityPolicy.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C861994DC4C00E255B0 /* AFSecurityPolicy.m */; };
+		FD650CAB1994DC4D00E255B0 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C881994DC4C00E255B0 /* AFURLConnectionOperation.m */; };
+		FD650CAC1994DC4D00E255B0 /* AFURLConnectionOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C881994DC4C00E255B0 /* AFURLConnectionOperation.m */; };
+		FD650CAD1994DC4D00E255B0 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C8A1994DC4C00E255B0 /* AFURLRequestSerialization.m */; };
+		FD650CAE1994DC4D00E255B0 /* AFURLRequestSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C8A1994DC4C00E255B0 /* AFURLRequestSerialization.m */; };
+		FD650CAF1994DC4D00E255B0 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C8C1994DC4C00E255B0 /* AFURLResponseSerialization.m */; };
+		FD650CB01994DC4D00E255B0 /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C8C1994DC4C00E255B0 /* AFURLResponseSerialization.m */; };
+		FD650CB11994DC4D00E255B0 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C8E1994DC4C00E255B0 /* AFURLSessionManager.m */; };
+		FD650CB21994DC4D00E255B0 /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C8E1994DC4C00E255B0 /* AFURLSessionManager.m */; };
+		FD650CB31994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C911994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m */; };
+		FD650CB41994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C911994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m */; };
+		FD650CB51994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C931994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m */; };
+		FD650CB61994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C931994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m */; };
+		FD650CB71994DC4D00E255B0 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C951994DC4D00E255B0 /* UIAlertView+AFNetworking.m */; };
+		FD650CB81994DC4D00E255B0 /* UIAlertView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C951994DC4D00E255B0 /* UIAlertView+AFNetworking.m */; };
+		FD650CB91994DC4D00E255B0 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C971994DC4D00E255B0 /* UIButton+AFNetworking.m */; };
+		FD650CBA1994DC4D00E255B0 /* UIButton+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C971994DC4D00E255B0 /* UIButton+AFNetworking.m */; };
+		FD650CBB1994DC4D00E255B0 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C991994DC4D00E255B0 /* UIImageView+AFNetworking.m */; };
+		FD650CBC1994DC4D00E255B0 /* UIImageView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C991994DC4D00E255B0 /* UIImageView+AFNetworking.m */; };
+		FD650CBD1994DC4D00E255B0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C9C1994DC4D00E255B0 /* UIProgressView+AFNetworking.m */; };
+		FD650CBE1994DC4D00E255B0 /* UIProgressView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C9C1994DC4D00E255B0 /* UIProgressView+AFNetworking.m */; };
+		FD650CBF1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C9E1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m */; };
+		FD650CC01994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650C9E1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m */; };
+		FD650CC11994DC4D00E255B0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650CA01994DC4D00E255B0 /* UIWebView+AFNetworking.m */; };
+		FD650CC21994DC4D00E255B0 /* UIWebView+AFNetworking.m in Sources */ = {isa = PBXBuildFile; fileRef = FD650CA01994DC4D00E255B0 /* UIWebView+AFNetworking.m */; };
+		FD650CD11994E1F600E255B0 /* Integration_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD650CD01994E1F600E255B0 /* Integration_Tests.swift */; };
 		FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */; };
 		FDFF61B91994BEFD005CAC28 /* flugwecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61B71994BEFD005CAC28 /* flugwecker.xcdatamodeld */; };
 		FDFF61BB1994BEFD005CAC28 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61BA1994BEFD005CAC28 /* MasterViewController.swift */; };
@@ -17,6 +52,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FD650CD21994E1F600E255B0 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FDFF61A81994BEFD005CAC28 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FDFF61AF1994BEFD005CAC28;
+			remoteInfo = flugwecker;
+		};
 		FDFF61C81994BEFD005CAC28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FDFF61A81994BEFD005CAC28 /* Project object */;
@@ -27,6 +69,48 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD650C721994DC0F00E255B0 /* flugwecker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flugwecker-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD650C731994DC0F00E255B0 /* flugweckerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "flugweckerTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		FD650C7C1994DC4C00E255B0 /* AFHTTPRequestOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperation.h; sourceTree = "<group>"; };
+		FD650C7D1994DC4C00E255B0 /* AFHTTPRequestOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperation.m; sourceTree = "<group>"; };
+		FD650C7E1994DC4C00E255B0 /* AFHTTPRequestOperationManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPRequestOperationManager.h; sourceTree = "<group>"; };
+		FD650C7F1994DC4C00E255B0 /* AFHTTPRequestOperationManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPRequestOperationManager.m; sourceTree = "<group>"; };
+		FD650C801994DC4C00E255B0 /* AFHTTPSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFHTTPSessionManager.h; sourceTree = "<group>"; };
+		FD650C811994DC4C00E255B0 /* AFHTTPSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFHTTPSessionManager.m; sourceTree = "<group>"; };
+		FD650C821994DC4C00E255B0 /* AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworking.h; sourceTree = "<group>"; };
+		FD650C831994DC4C00E255B0 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
+		FD650C841994DC4C00E255B0 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
+		FD650C851994DC4C00E255B0 /* AFSecurityPolicy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFSecurityPolicy.h; sourceTree = "<group>"; };
+		FD650C861994DC4C00E255B0 /* AFSecurityPolicy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFSecurityPolicy.m; sourceTree = "<group>"; };
+		FD650C871994DC4C00E255B0 /* AFURLConnectionOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLConnectionOperation.h; sourceTree = "<group>"; };
+		FD650C881994DC4C00E255B0 /* AFURLConnectionOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLConnectionOperation.m; sourceTree = "<group>"; };
+		FD650C891994DC4C00E255B0 /* AFURLRequestSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLRequestSerialization.h; sourceTree = "<group>"; };
+		FD650C8A1994DC4C00E255B0 /* AFURLRequestSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLRequestSerialization.m; sourceTree = "<group>"; };
+		FD650C8B1994DC4C00E255B0 /* AFURLResponseSerialization.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLResponseSerialization.h; sourceTree = "<group>"; };
+		FD650C8C1994DC4C00E255B0 /* AFURLResponseSerialization.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLResponseSerialization.m; sourceTree = "<group>"; };
+		FD650C8D1994DC4C00E255B0 /* AFURLSessionManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFURLSessionManager.h; sourceTree = "<group>"; };
+		FD650C8E1994DC4C00E255B0 /* AFURLSessionManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFURLSessionManager.m; sourceTree = "<group>"; };
+		FD650C901994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AFNetworkActivityIndicatorManager.h; sourceTree = "<group>"; };
+		FD650C911994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AFNetworkActivityIndicatorManager.m; sourceTree = "<group>"; };
+		FD650C921994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActivityIndicatorView+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C931994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650C941994DC4D00E255B0 /* UIAlertView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C951994DC4D00E255B0 /* UIAlertView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650C961994DC4D00E255B0 /* UIButton+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C971994DC4D00E255B0 /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650C981994DC4D00E255B0 /* UIImageView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C991994DC4D00E255B0 /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650C9A1994DC4D00E255B0 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIKit+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C9B1994DC4D00E255B0 /* UIProgressView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIProgressView+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C9C1994DC4D00E255B0 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650C9D1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650C9E1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650C9F1994DC4D00E255B0 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
+		FD650CA01994DC4D00E255B0 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
+		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		FD650CCC1994E1F600E255B0 /* Integration Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Integration Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
 		FDFF61B01994BEFD005CAC28 /* flugwecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flugwecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFF61B41994BEFD005CAC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +125,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		FD650CC91994E1F600E255B0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDFF61AD1994BEFD005CAC28 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -58,11 +149,84 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD650C7B1994DC4C00E255B0 /* AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				FD650C7C1994DC4C00E255B0 /* AFHTTPRequestOperation.h */,
+				FD650C7D1994DC4C00E255B0 /* AFHTTPRequestOperation.m */,
+				FD650C7E1994DC4C00E255B0 /* AFHTTPRequestOperationManager.h */,
+				FD650C7F1994DC4C00E255B0 /* AFHTTPRequestOperationManager.m */,
+				FD650C801994DC4C00E255B0 /* AFHTTPSessionManager.h */,
+				FD650C811994DC4C00E255B0 /* AFHTTPSessionManager.m */,
+				FD650C821994DC4C00E255B0 /* AFNetworking.h */,
+				FD650C831994DC4C00E255B0 /* AFNetworkReachabilityManager.h */,
+				FD650C841994DC4C00E255B0 /* AFNetworkReachabilityManager.m */,
+				FD650C851994DC4C00E255B0 /* AFSecurityPolicy.h */,
+				FD650C861994DC4C00E255B0 /* AFSecurityPolicy.m */,
+				FD650C871994DC4C00E255B0 /* AFURLConnectionOperation.h */,
+				FD650C881994DC4C00E255B0 /* AFURLConnectionOperation.m */,
+				FD650C891994DC4C00E255B0 /* AFURLRequestSerialization.h */,
+				FD650C8A1994DC4C00E255B0 /* AFURLRequestSerialization.m */,
+				FD650C8B1994DC4C00E255B0 /* AFURLResponseSerialization.h */,
+				FD650C8C1994DC4C00E255B0 /* AFURLResponseSerialization.m */,
+				FD650C8D1994DC4C00E255B0 /* AFURLSessionManager.h */,
+				FD650C8E1994DC4C00E255B0 /* AFURLSessionManager.m */,
+			);
+			name = AFNetworking;
+			path = AFNetworking/AFNetworking;
+			sourceTree = "<group>";
+		};
+		FD650C8F1994DC4C00E255B0 /* UIKit+AFNetworking */ = {
+			isa = PBXGroup;
+			children = (
+				FD650C901994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.h */,
+				FD650C911994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m */,
+				FD650C921994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.h */,
+				FD650C931994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m */,
+				FD650C941994DC4D00E255B0 /* UIAlertView+AFNetworking.h */,
+				FD650C951994DC4D00E255B0 /* UIAlertView+AFNetworking.m */,
+				FD650C961994DC4D00E255B0 /* UIButton+AFNetworking.h */,
+				FD650C971994DC4D00E255B0 /* UIButton+AFNetworking.m */,
+				FD650C981994DC4D00E255B0 /* UIImageView+AFNetworking.h */,
+				FD650C991994DC4D00E255B0 /* UIImageView+AFNetworking.m */,
+				FD650C9A1994DC4D00E255B0 /* UIKit+AFNetworking.h */,
+				FD650C9B1994DC4D00E255B0 /* UIProgressView+AFNetworking.h */,
+				FD650C9C1994DC4D00E255B0 /* UIProgressView+AFNetworking.m */,
+				FD650C9D1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.h */,
+				FD650C9E1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m */,
+				FD650C9F1994DC4D00E255B0 /* UIWebView+AFNetworking.h */,
+				FD650CA01994DC4D00E255B0 /* UIWebView+AFNetworking.m */,
+			);
+			name = "UIKit+AFNetworking";
+			path = "AFNetworking/UIKit+AFNetworking";
+			sourceTree = "<group>";
+		};
+		FD650CCD1994E1F600E255B0 /* Integration Tests */ = {
+			isa = PBXGroup;
+			children = (
+				FD650CD01994E1F600E255B0 /* Integration_Tests.swift */,
+				FD650CCE1994E1F600E255B0 /* Supporting Files */,
+			);
+			path = "Integration Tests";
+			sourceTree = "<group>";
+		};
+		FD650CCE1994E1F600E255B0 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				FD650CCF1994E1F600E255B0 /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
+				FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */,
+				FD650C7B1994DC4C00E255B0 /* AFNetworking */,
+				FD650C8F1994DC4C00E255B0 /* UIKit+AFNetworking */,
 				FDFF61B21994BEFD005CAC28 /* flugwecker */,
 				FDFF61CA1994BEFD005CAC28 /* flugweckerTests */,
+				FD650CCD1994E1F600E255B0 /* Integration Tests */,
 				FDFF61B11994BEFD005CAC28 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -72,6 +236,7 @@
 			children = (
 				FDFF61B01994BEFD005CAC28 /* flugwecker.app */,
 				FDFF61C71994BEFD005CAC28 /* flugweckerTests.xctest */,
+				FD650CCC1994E1F600E255B0 /* Integration Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +251,8 @@
 				FDFF61C11994BEFD005CAC28 /* Images.xcassets */,
 				FDFF61B71994BEFD005CAC28 /* flugwecker.xcdatamodeld */,
 				FDFF61B31994BEFD005CAC28 /* Supporting Files */,
+				FD650C721994DC0F00E255B0 /* flugwecker-Bridging-Header.h */,
+				FD650C731994DC0F00E255B0 /* flugweckerTests-Bridging-Header.h */,
 			);
 			path = flugwecker;
 			sourceTree = "<group>";
@@ -118,6 +285,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		FD650CCB1994E1F600E255B0 /* Integration Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FD650CD41994E1F600E255B0 /* Build configuration list for PBXNativeTarget "Integration Tests" */;
+			buildPhases = (
+				FD650CC81994E1F600E255B0 /* Sources */,
+				FD650CC91994E1F600E255B0 /* Frameworks */,
+				FD650CCA1994E1F600E255B0 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FD650CD31994E1F600E255B0 /* PBXTargetDependency */,
+			);
+			name = "Integration Tests";
+			productName = "Integration Tests";
+			productReference = FD650CCC1994E1F600E255B0 /* Integration Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		FDFF61AF1994BEFD005CAC28 /* flugwecker */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FDFF61D11994BEFD005CAC28 /* Build configuration list for PBXNativeTarget "flugwecker" */;
@@ -162,6 +347,10 @@
 				LastUpgradeCheck = 0600;
 				ORGANIZATIONNAME = "Udo von Eynern";
 				TargetAttributes = {
+					FD650CCB1994E1F600E255B0 = {
+						CreatedOnToolsVersion = 6.0;
+						TestTargetID = FDFF61AF1994BEFD005CAC28;
+					};
 					FDFF61AF1994BEFD005CAC28 = {
 						CreatedOnToolsVersion = 6.0;
 					};
@@ -186,11 +375,19 @@
 			targets = (
 				FDFF61AF1994BEFD005CAC28 /* flugwecker */,
 				FDFF61C61994BEFD005CAC28 /* flugweckerTests */,
+				FD650CCB1994E1F600E255B0 /* Integration Tests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		FD650CCA1994E1F600E255B0 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDFF61AE1994BEFD005CAC28 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -210,13 +407,38 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		FD650CC81994E1F600E255B0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FD650CD11994E1F600E255B0 /* Integration_Tests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FDFF61AC1994BEFD005CAC28 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD650CBD1994DC4D00E255B0 /* UIProgressView+AFNetworking.m in Sources */,
+				FD650CB91994DC4D00E255B0 /* UIButton+AFNetworking.m in Sources */,
+				FD650CBF1994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m in Sources */,
+				FD650CB71994DC4D00E255B0 /* UIAlertView+AFNetworking.m in Sources */,
 				FDFF61B91994BEFD005CAC28 /* flugwecker.xcdatamodeld in Sources */,
+				FD650CA91994DC4D00E255B0 /* AFSecurityPolicy.m in Sources */,
 				FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */,
+				FD650CA31994DC4D00E255B0 /* AFHTTPRequestOperationManager.m in Sources */,
+				FD650CAB1994DC4D00E255B0 /* AFURLConnectionOperation.m in Sources */,
+				FD650CBB1994DC4D00E255B0 /* UIImageView+AFNetworking.m in Sources */,
+				FD650CA11994DC4D00E255B0 /* AFHTTPRequestOperation.m in Sources */,
+				FD650CB51994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
 				FDFF61BB1994BEFD005CAC28 /* MasterViewController.swift in Sources */,
+				FD650CAD1994DC4D00E255B0 /* AFURLRequestSerialization.m in Sources */,
+				FD650CA51994DC4D00E255B0 /* AFHTTPSessionManager.m in Sources */,
+				FD650CA71994DC4D00E255B0 /* AFNetworkReachabilityManager.m in Sources */,
+				FD650CAF1994DC4D00E255B0 /* AFURLResponseSerialization.m in Sources */,
+				FD650CC11994DC4D00E255B0 /* UIWebView+AFNetworking.m in Sources */,
+				FD650CB11994DC4D00E255B0 /* AFURLSessionManager.m in Sources */,
+				FD650CB31994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m in Sources */,
 				FDFF61BD1994BEFD005CAC28 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -225,13 +447,35 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD650CBE1994DC4D00E255B0 /* UIProgressView+AFNetworking.m in Sources */,
+				FD650CAC1994DC4D00E255B0 /* AFURLConnectionOperation.m in Sources */,
+				FD650CC21994DC4D00E255B0 /* UIWebView+AFNetworking.m in Sources */,
+				FD650CBC1994DC4D00E255B0 /* UIImageView+AFNetworking.m in Sources */,
+				FD650CB01994DC4D00E255B0 /* AFURLResponseSerialization.m in Sources */,
+				FD650CBA1994DC4D00E255B0 /* UIButton+AFNetworking.m in Sources */,
+				FD650CB81994DC4D00E255B0 /* UIAlertView+AFNetworking.m in Sources */,
+				FD650CA21994DC4D00E255B0 /* AFHTTPRequestOperation.m in Sources */,
+				FD650CC01994DC4D00E255B0 /* UIRefreshControl+AFNetworking.m in Sources */,
 				FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */,
+				FD650CB41994DC4D00E255B0 /* AFNetworkActivityIndicatorManager.m in Sources */,
+				FD650CA81994DC4D00E255B0 /* AFNetworkReachabilityManager.m in Sources */,
+				FD650CB61994DC4D00E255B0 /* UIActivityIndicatorView+AFNetworking.m in Sources */,
+				FD650CB21994DC4D00E255B0 /* AFURLSessionManager.m in Sources */,
+				FD650CA41994DC4D00E255B0 /* AFHTTPRequestOperationManager.m in Sources */,
+				FD650CAA1994DC4D00E255B0 /* AFSecurityPolicy.m in Sources */,
+				FD650CA61994DC4D00E255B0 /* AFHTTPSessionManager.m in Sources */,
+				FD650CAE1994DC4D00E255B0 /* AFURLRequestSerialization.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		FD650CD31994E1F600E255B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FDFF61AF1994BEFD005CAC28 /* flugwecker */;
+			targetProxy = FD650CD21994E1F600E255B0 /* PBXContainerItemProxy */;
+		};
 		FDFF61C91994BEFD005CAC28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FDFF61AF1994BEFD005CAC28 /* flugwecker */;
@@ -251,6 +495,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		FD650CD51994E1F600E255B0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Integration Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flugwecker.app/flugwecker";
+			};
+			name = Debug;
+		};
+		FD650CD61994E1F600E255B0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "Integration Tests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flugwecker.app/flugwecker";
+			};
+			name = Release;
+		};
 		FDFF61CF1994BEFD005CAC28 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -335,9 +611,12 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = flugwecker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugwecker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +625,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
 				INFOPLIST_FILE = flugwecker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugwecker-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -356,6 +637,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -367,6 +649,8 @@
 				INFOPLIST_FILE = flugweckerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugweckerTests-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flugwecker.app/flugwecker";
 			};
 			name = Debug;
@@ -375,6 +659,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -382,6 +667,7 @@
 				INFOPLIST_FILE = flugweckerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugweckerTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flugwecker.app/flugwecker";
 			};
 			name = Release;
@@ -389,6 +675,14 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		FD650CD41994E1F600E255B0 /* Build configuration list for PBXNativeTarget "Integration Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FD650CD51994E1F600E255B0 /* Debug */,
+				FD650CD61994E1F600E255B0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
 		FDFF61AB1994BEFD005CAC28 /* Build configuration list for PBXProject "flugwecker" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -405,6 +699,7 @@
 				FDFF61D31994BEFD005CAC28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FDFF61D41994BEFD005CAC28 /* Build configuration list for PBXNativeTarget "flugweckerTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +708,7 @@
 				FDFF61D61994BEFD005CAC28 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

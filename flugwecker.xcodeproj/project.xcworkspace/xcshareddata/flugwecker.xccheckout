@@ -10,15 +10,23 @@
 	<string>flugwecker</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
+		<key>10265E242415D473A6A613214DB7AC3EE3D43F93</key>
+		<string>https://github.com/kif-framework/KIF</string>
 		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
 		<string>https://github.com/lesmuc/flugwecker-swift</string>
+		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
+		<string>https://github.com/AFNetworking/AFNetworking</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>flugwecker.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
+		<key>10265E242415D473A6A613214DB7AC3EE3D43F93</key>
+		<string>../..KIF</string>
 		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
 		<string>../..</string>
+		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
+		<string>../../AFNetworking/</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>https://github.com/lesmuc/flugwecker-swift</string>
@@ -32,9 +40,25 @@
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</string>
+			<key>IDESourceControlWCCName</key>
+			<string>AFNetworking</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
 			<string>378C8E368E70F7863905BD683B3F86D8B1DF5600</string>
 			<key>IDESourceControlWCCName</key>
 			<string>flugwecker-swift</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>10265E242415D473A6A613214DB7AC3EE3D43F93</string>
+			<key>IDESourceControlWCCName</key>
+			<string>flugwecker-swiftKIF</string>
 		</dict>
 	</array>
 </dict>
