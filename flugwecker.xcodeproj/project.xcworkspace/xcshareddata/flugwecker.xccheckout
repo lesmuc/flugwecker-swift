@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>19C81882-380A-447F-94B4-E641F0B9A3CE</string>
+	<key>IDESourceControlProjectName</key>
+	<string>flugwecker</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
+		<string>https://github.com/lesmuc/flugwecker-swift</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>flugwecker.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/lesmuc/flugwecker-swift</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>378C8E368E70F7863905BD683B3F86D8B1DF5600</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>378C8E368E70F7863905BD683B3F86D8B1DF5600</string>
+			<key>IDESourceControlWCCName</key>
+			<string>flugwecker-swift</string>
+		</dict>
+	</array>
+</dict>
+</plist>

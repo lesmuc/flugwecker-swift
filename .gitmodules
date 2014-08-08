@@ -1,0 +1,6 @@
+[submodule "KIF"]
+	path = KIF
+	url = https://github.com/kif-framework/KIF
+[submodule "AFNetworking"]
+	path = AFNetworking
+	url = https://github.com/AFNetworking/AFNetworking
