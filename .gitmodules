@@ -1,0 +1,6 @@
+[submodule "Alamofire"]
+	path = Alamofire
+	url = https://github.com/Alamofire/Alamofire
+[submodule "SwiftyJSON"]
+	path = SwiftyJSON
+	url = https://github.com/lingoer/SwiftyJSON

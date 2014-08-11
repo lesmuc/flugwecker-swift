@@ -7,10 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6C71998900D00D227FF /* Alamofire.swift */; };
+		FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6C71998900D00D227FF /* Alamofire.swift */; };
+		FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
+		FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
 		FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */; };
-		FDFF61B91994BEFD005CAC28 /* flugwecker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61B71994BEFD005CAC28 /* flugwecker.xcdatamodeld */; };
-		FDFF61BB1994BEFD005CAC28 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61BA1994BEFD005CAC28 /* MasterViewController.swift */; };
-		FDFF61BD1994BEFD005CAC28 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61BC1994BEFD005CAC28 /* DetailViewController.swift */; };
+		FDFF61BB1994BEFD005CAC28 /* AirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */; };
 		FDFF61C01994BEFD005CAC28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFF61BE1994BEFD005CAC28 /* Main.storyboard */; };
 		FDFF61C21994BEFD005CAC28 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FDFF61C11994BEFD005CAC28 /* Images.xcassets */; };
 		FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61CD1994BEFD005CAC28 /* flugweckerTests.swift */; };
@@ -30,12 +32,12 @@
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
+		FDC7B6C71998900D00D227FF /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Alamofire/Source/Alamofire.swift; sourceTree = SOURCE_ROOT; };
+		FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		FDFF61B01994BEFD005CAC28 /* flugwecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flugwecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFF61B41994BEFD005CAC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		FDFF61B81994BEFD005CAC28 /* flugwecker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = flugwecker.xcdatamodel; sourceTree = "<group>"; };
-		FDFF61BA1994BEFD005CAC28 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		FDFF61BC1994BEFD005CAC28 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AirportViewController.swift; sourceTree = "<group>"; };
 		FDFF61BF1994BEFD005CAC28 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FDFF61C11994BEFD005CAC28 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		FDFF61C71994BEFD005CAC28 /* flugweckerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = flugweckerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -101,12 +103,12 @@
 		FDFF61B21994BEFD005CAC28 /* flugwecker */ = {
 			isa = PBXGroup;
 			children = (
+				FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */,
+				FDC7B6C71998900D00D227FF /* Alamofire.swift */,
 				FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */,
-				FDFF61BA1994BEFD005CAC28 /* MasterViewController.swift */,
-				FDFF61BC1994BEFD005CAC28 /* DetailViewController.swift */,
+				FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */,
 				FDFF61BE1994BEFD005CAC28 /* Main.storyboard */,
 				FDFF61C11994BEFD005CAC28 /* Images.xcassets */,
-				FDFF61B71994BEFD005CAC28 /* flugwecker.xcdatamodeld */,
 				FDFF61B31994BEFD005CAC28 /* Supporting Files */,
 			);
 			path = flugwecker;
@@ -236,10 +238,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FDFF61B91994BEFD005CAC28 /* flugwecker.xcdatamodeld in Sources */,
 				FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */,
-				FDFF61BB1994BEFD005CAC28 /* MasterViewController.swift in Sources */,
-				FDFF61BD1994BEFD005CAC28 /* DetailViewController.swift in Sources */,
+				FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */,
+				FDFF61BB1994BEFD005CAC28 /* AirportViewController.swift in Sources */,
+				FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -247,6 +249,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */,
+				FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */,
 				FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -363,6 +367,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -376,6 +381,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -449,19 +455,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		FDFF61B71994BEFD005CAC28 /* flugwecker.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				FDFF61B81994BEFD005CAC28 /* flugwecker.xcdatamodel */,
-			);
-			currentVersion = FDFF61B81994BEFD005CAC28 /* flugwecker.xcdatamodel */;
-			path = flugwecker.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = FDFF61A81994BEFD005CAC28 /* Project object */;
 }
