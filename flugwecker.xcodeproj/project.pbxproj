@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD377E5019993AC700CEEAFD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD377E4F19993AC700CEEAFD /* Airport.swift */; };
+		FD377E5119993AC700CEEAFD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD377E4F19993AC700CEEAFD /* Airport.swift */; };
+		FD3D5C68199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
+		FD3D5C69199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
+		FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */; };
+		FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */; };
 		FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6C71998900D00D227FF /* Alamofire.swift */; };
 		FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6C71998900D00D227FF /* Alamofire.swift */; };
 		FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
@@ -29,9 +35,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD377E4F19993AC700CEEAFD /* Airport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
+		FD3D5C67199950EF00DEADBC /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
+		FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		FDC7B6C71998900D00D227FF /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Alamofire/Source/Alamofire.swift; sourceTree = SOURCE_ROOT; };
 		FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		FDFF61B01994BEFD005CAC28 /* flugwecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flugwecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -63,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FD377E5219993ACB00CEEAFD /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FD377E4F19993AC700CEEAFD /* Airport.swift */,
+				FD3D5C67199950EF00DEADBC /* Region.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		FD650CCD1994E1F600E255B0 /* Integration Tests */ = {
 			isa = PBXGroup;
 			children = (
@@ -78,6 +96,24 @@
 				FD650CCF1994E1F600E255B0 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FD7068481998EE5700FEA65B /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */,
+				FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		FD7068491998EE5D00FEA65B /* Externals */ = {
+			isa = PBXGroup;
+			children = (
+				FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */,
+				FDC7B6C71998900D00D227FF /* Alamofire.swift */,
+			);
+			name = Externals;
 			sourceTree = "<group>";
 		};
 		FDFF61A71994BEFD005CAC28 = {
@@ -103,12 +139,12 @@
 		FDFF61B21994BEFD005CAC28 /* flugwecker */ = {
 			isa = PBXGroup;
 			children = (
-				FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */,
-				FDC7B6C71998900D00D227FF /* Alamofire.swift */,
+				FD377E5219993ACB00CEEAFD /* Models */,
 				FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */,
-				FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */,
 				FDFF61BE1994BEFD005CAC28 /* Main.storyboard */,
 				FDFF61C11994BEFD005CAC28 /* Images.xcassets */,
+				FD7068491998EE5D00FEA65B /* Externals */,
+				FD7068481998EE5700FEA65B /* View Controllers */,
 				FDFF61B31994BEFD005CAC28 /* Supporting Files */,
 			);
 			path = flugwecker;
@@ -238,8 +274,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */,
 				FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */,
+				FD377E5019993AC700CEEAFD /* Airport.swift in Sources */,
+				FD3D5C68199950EF00DEADBC /* Region.swift in Sources */,
 				FDFF61BB1994BEFD005CAC28 /* AirportViewController.swift in Sources */,
 				FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 			);
@@ -249,7 +288,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FD377E5119993AC700CEEAFD /* Airport.swift in Sources */,
+				FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */,
+				FD3D5C69199950EF00DEADBC /* Region.swift in Sources */,
 				FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */,
 				FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */,
 			);

@@ -7,11 +7,10 @@
 //
 
 import UIKit
-import CoreData
 
 class AirportViewController: UITableViewController {
     
-    var items = [JSONValue]()
+    var items = [Airport]()
     
     override func viewWillAppear(animated: Bool) {
         
@@ -19,16 +18,18 @@ class AirportViewController: UITableViewController {
 
         Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
 
-        Alamofire.request(.GET, "http://www.flugwecker.de/airports", parameters: nil).response {request, response, data, error in
+        Alamofire.request(.GET, "http://flugwecker.de/airports-inside/de", parameters: nil).response {request, response, data, error in
             let json = JSONValue(data as NSData)
             
-            for airport in json["airports"].array!{
-                self.items.append(airport)
+            if json["airports"] {
+                for jsonAirport in json["airports"].array!{
+                    let airport = Airport.decode(jsonAirport)
+                    self.items.append(airport)
+                }
             }
             
             self.tableView.reloadData()
         }
-
     }
 
     // MARK: - Table View
@@ -37,17 +38,24 @@ class AirportViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as UITableViewCell
-        self.configureCell(cell, atIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("AirportIdentifier", forIndexPath: indexPath) as UITableViewCell
+
+        let airport = self.items[indexPath.row]
+        
+        let name = airport.name
+        
+        cell.textLabel.text = name;
+        
         return cell
     }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        let controller = segue.destinationViewController as RegionViewController
 
-    func configureCell(cell: UITableViewCell, atIndexPath indexPath: NSIndexPath) {
-        let object: JSONValue = self.items[indexPath.row]
+        let airport = self.items[self.tableView.indexPathForSelectedRow().row]
         
-        let name = object["name"].string!
-
-        cell.textLabel.text = name;
+        controller.airport = airport;
     }
 }
+
 

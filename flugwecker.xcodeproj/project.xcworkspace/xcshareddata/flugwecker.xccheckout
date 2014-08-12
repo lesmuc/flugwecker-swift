@@ -30,9 +30,9 @@
 		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
 		<string>../..</string>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
-		<string>../../Alamofire/</string>
+		<string>../../Alamofire</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
-		<string>../../SwiftyJSON/</string>
+		<string>../../SwiftyJSON</string>
 		<key>DD20A1A48C66B5213E0FEBB87A95EF51D6C6F3E8</key>
 		<string>../../AFNetworking</string>
 	</dict>
