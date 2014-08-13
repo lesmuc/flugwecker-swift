@@ -116,6 +116,13 @@
 			name = Externals;
 			sourceTree = "<group>";
 		};
+		FD7FC2AE199B4FBF00322601 /* PKHUD */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = PKHUD;
+			sourceTree = "<group>";
+		};
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
@@ -139,6 +146,7 @@
 		FDFF61B21994BEFD005CAC28 /* flugwecker */ = {
 			isa = PBXGroup;
 			children = (
+				FD7FC2AE199B4FBF00322601 /* PKHUD */,
 				FD377E5219993ACB00CEEAFD /* Models */,
 				FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */,
 				FDFF61BE1994BEFD005CAC28 /* Main.storyboard */,
@@ -404,6 +412,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = flugwecker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -419,6 +431,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = flugwecker/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -435,6 +451,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -457,6 +474,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = flugweckerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

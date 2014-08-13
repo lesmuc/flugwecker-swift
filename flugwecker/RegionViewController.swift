@@ -8,16 +8,22 @@
 
 import UIKit
 
-class RegionViewController: UITableViewController {
+class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var items = [Region]()
     
     var airport: Airport!
     
+    @IBOutlet var tableView : UITableView!
+    
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!    
+    
     override func viewWillAppear(animated: Bool) {
         
         super.viewWillAppear(animated)
         
+        self.activityIndicatorView.startAnimating()
+
         Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         let origin:String = airport.id
@@ -35,20 +41,20 @@ class RegionViewController: UITableViewController {
             }
             
             self.tableView.reloadData()
+            
+            self.activityIndicatorView.stopAnimating()
         }
     }
     
     // MARK: - Table View
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.items.count
     }
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("RegionIdentifier", forIndexPath: indexPath) as UITableViewCell
         
         let region: Region = self.items[indexPath.row]
-        
-        println(region.name)
         
         cell.textLabel.text = region.name
         

@@ -14,6 +14,8 @@
 		<string>https://github.com/kif-framework/KIF</string>
 		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
 		<string>https://github.com/lesmuc/flugwecker-swift</string>
+		<key>4EA48C4418C0D37C936EB709C50F03661DB187D9</key>
+		<string>https://github.com/pkluz/PKHUD</string>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
 		<string>https://github.com/Alamofire/Alamofire</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
@@ -29,6 +31,8 @@
 		<string>../..KIF</string>
 		<key>378C8E368E70F7863905BD683B3F86D8B1DF5600</key>
 		<string>../..</string>
+		<key>4EA48C4418C0D37C936EB709C50F03661DB187D9</key>
+		<string>../../PKHUD</string>
 		<key>67620B5EFA902936DF04070AF595B76AB0333747</key>
 		<string>../../Alamofire</string>
 		<key>C861FC00CEE0F6A6BE81FCFF6785FAA78C58EBB3</key>
@@ -75,6 +79,14 @@
 			<string>10265E242415D473A6A613214DB7AC3EE3D43F93</string>
 			<key>IDESourceControlWCCName</key>
 			<string>flugwecker-swiftKIF</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>4EA48C4418C0D37C936EB709C50F03661DB187D9</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PKHUD</string>
 		</dict>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
