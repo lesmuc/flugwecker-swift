@@ -116,13 +116,6 @@
 			name = Externals;
 			sourceTree = "<group>";
 		};
-		FD7FC2AE199B4FBF00322601 /* PKHUD */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = PKHUD;
-			sourceTree = "<group>";
-		};
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
@@ -146,7 +139,6 @@
 		FDFF61B21994BEFD005CAC28 /* flugwecker */ = {
 			isa = PBXGroup;
 			children = (
-				FD7FC2AE199B4FBF00322601 /* PKHUD */,
 				FD377E5219993ACB00CEEAFD /* Models */,
 				FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */,
 				FDFF61BE1994BEFD005CAC28 /* Main.storyboard */,

@@ -90,12 +90,12 @@
                                 <exclude reference="j1z-hD-eUd"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="IYl-tD-xiL"/>
+                                <exclude reference="cBc-WX-RE9"/>
                                 <exclude reference="2he-Wq-qwx"/>
                                 <exclude reference="Amt-PD-Uom"/>
                                 <exclude reference="au1-Bg-Wwj"/>
                                 <exclude reference="mDa-sg-cfT"/>
-                                <exclude reference="IYl-tD-xiL"/>
-                                <exclude reference="cBc-WX-RE9"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -103,12 +103,12 @@
                                 <include reference="j1z-hD-eUd"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="IYl-tD-xiL"/>
+                                <include reference="cBc-WX-RE9"/>
                                 <include reference="2he-Wq-qwx"/>
                                 <include reference="Amt-PD-Uom"/>
                                 <include reference="au1-Bg-Wwj"/>
                                 <include reference="mDa-sg-cfT"/>
-                                <include reference="IYl-tD-xiL"/>
-                                <include reference="cBc-WX-RE9"/>
                             </mask>
                         </variation>
                     </view>
@@ -140,6 +140,48 @@
                                 <color key="separatorColor" red="0.16862745583057404" green="0.7137255072593689" blue="0.67058825492858887" alpha="1" colorSpace="deviceRGB"/>
                                 <color key="sectionIndexBackgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="CellHeader" rowHeight="200" id="2Te-TL-Spf">
+                                        <rect key="frame" x="0.0" y="86" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="2Te-TL-Spf" id="M8I-ci-w9g">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" tag="300" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="39e-ml-Z80">
+                                                    <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                                </imageView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="39e-ml-Z80" firstAttribute="leading" secondItem="M8I-ci-w9g" secondAttribute="leadingMargin" constant="-8" id="BxH-Rw-9nU"/>
+                                                <constraint firstItem="39e-ml-Z80" firstAttribute="top" secondItem="M8I-ci-w9g" secondAttribute="topMargin" constant="-8" id="Umv-xe-4ra"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="39e-ml-Z80" secondAttribute="trailing" constant="-8" id="hPK-c0-3qA"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="39e-ml-Z80" secondAttribute="bottom" constant="-8" id="t83-IG-5if"/>
+                                            </constraints>
+                                            <variation key="default">
+                                                <mask key="subviews">
+                                                    <exclude reference="39e-ml-Z80"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <exclude reference="BxH-Rw-9nU"/>
+                                                    <exclude reference="Umv-xe-4ra"/>
+                                                    <exclude reference="hPK-c0-3qA"/>
+                                                    <exclude reference="t83-IG-5if"/>
+                                                </mask>
+                                            </variation>
+                                            <variation key="heightClass=regular-widthClass=regular">
+                                                <mask key="subviews">
+                                                    <include reference="39e-ml-Z80"/>
+                                                </mask>
+                                                <mask key="constraints">
+                                                    <include reference="BxH-Rw-9nU"/>
+                                                    <include reference="Umv-xe-4ra"/>
+                                                    <include reference="hPK-c0-3qA"/>
+                                                    <include reference="t83-IG-5if"/>
+                                                </mask>
+                                            </variation>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="gray" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="RegionIdentifier" textLabel="Tcs-fe-Det" style="IBUITableViewCellStyleDefault" id="EyH-Ht-LrE">
                                         <rect key="frame" x="0.0" y="86" width="320" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
@@ -188,9 +230,9 @@
                                 <exclude reference="14B-eY-gsj"/>
                                 <exclude reference="hRX-LC-4yi"/>
                                 <exclude reference="r8B-gm-vF6"/>
+                                <exclude reference="B0P-1D-4bR"/>
                                 <exclude reference="6nn-dj-ZK6"/>
                                 <exclude reference="ead-Hx-Yh5"/>
-                                <exclude reference="B0P-1D-4bR"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -201,9 +243,9 @@
                                 <include reference="14B-eY-gsj"/>
                                 <include reference="hRX-LC-4yi"/>
                                 <include reference="r8B-gm-vF6"/>
+                                <include reference="B0P-1D-4bR"/>
                                 <include reference="6nn-dj-ZK6"/>
                                 <include reference="ead-Hx-Yh5"/>
-                                <include reference="B0P-1D-4bR"/>
                             </mask>
                         </variation>
                     </view>
@@ -214,7 +256,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4cr-iB-Evu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1876" y="-631.5"/>
+            <point key="canvasLocation" x="1875.75" y="-631.5"/>
         </scene>
     </scenes>
 </document>

@@ -10,11 +10,24 @@ import UIKit
 
 class AirportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    let API_URL = "http://www.flugwecker.de"    
+    
     var items = [Airport]()
     
     @IBOutlet var tableView : UITableView!
     
     @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
+    var refreshControl:UIRefreshControl!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        self.refreshControl = UIRefreshControl()
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tableView.addSubview(refreshControl)
+    }
     
     override func viewWillAppear(animated: Bool) {
         
@@ -22,24 +35,39 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         if self.items.count == 0 {
             
-            self.activityIndicatorView.startAnimating()
+            self.loadItems()
+        }
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadItems()
+    }
+    
+    func loadItems() {
+        self.activityIndicatorView.startAnimating()
+        
+        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        
+        Alamofire.request(.GET, "\(API_URL)/airports-inside/de", parameters: nil).response {request, response, data, error in
+            let json = JSONValue(data as NSData)
             
-            Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
-            
-            Alamofire.request(.GET, "http://flugwecker.de/airports-inside/de", parameters: nil).response {request, response, data, error in
-                let json = JSONValue(data as NSData)
+            if json["airports"] {
                 
-                if json["airports"] {
-                    for jsonAirport in json["airports"].array!{
-                        let airport = Airport.decode(jsonAirport)
-                        self.items.append(airport)
-                    }
+                self.items.removeAll(keepCapacity: true)
+                
+                for jsonAirport in json["airports"].array!{
+                    let airport = Airport.decode(jsonAirport)
+                    self.items.append(airport)
                 }
-                
-                self.tableView.reloadData()
-                
-                self.activityIndicatorView.stopAnimating()
             }
+            
+            self.tableView.reloadData()
+            
+            if self.refreshControl.refreshing == true {
+                self.refreshControl.endRefreshing()
+            }
+            
+            self.activityIndicatorView.stopAnimating()
         }
     }
 
@@ -49,8 +77,9 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCellWithIdentifier("AirportIdentifier", forIndexPath: indexPath) as UITableViewCell
-
+        
         let airport = self.items[indexPath.row]
         
         let name = airport.name
