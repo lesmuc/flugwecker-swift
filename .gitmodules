@@ -4,6 +4,3 @@
 [submodule "SwiftyJSON"]
 	path = SwiftyJSON
 	url = https://github.com/lingoer/SwiftyJSON
-[submodule "PKHUD"]
-	path = PKHUD
-	url = https://github.com/pkluz/PKHUD
