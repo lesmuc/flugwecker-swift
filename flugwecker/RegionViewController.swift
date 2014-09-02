@@ -10,15 +10,14 @@ import UIKit
 
 class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let API_URL = "http://www.flugwecker.de"
-    
     var items = [Region]()
+
+    let headerImageWidth:CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 568.0 : 1024.0
+    let headerImageHeight:CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 200.0 : 400.0
     
-    var airport: Airport!
+    var selectedAirport: Airport!
     
     @IBOutlet var tableView : UITableView!
-    
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var refreshControl:UIRefreshControl!
     
@@ -27,6 +26,8 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
+        
+        self.title = "Ziel / Region"
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -41,15 +42,16 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func loadItems() {
-        self.activityIndicatorView.startAnimating()
+        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)        
         
         Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
-        let origin:String = airport.id
+        let origin:String = selectedAirport.id
         
-        Alamofire.request(.GET, "\(API_URL)/regions-from/\(airport.id)", parameters: nil).response {request, response, data, error in
+        Alamofire.request(.GET, "\(API_URL)/regions-from/\(selectedAirport.id)", parameters: nil).response {request, response, data, error in
             
-            let json = JSONValue(data as NSData)
+            let json = JSONValue(data as NSData!)
             
             if json["regions"] {
                 
@@ -68,7 +70,7 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 self.refreshControl.endRefreshing()
             }
             
-            self.activityIndicatorView.stopAnimating()
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)            
         }
     }
     
@@ -79,7 +81,7 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         if indexPath.row == 0 {
-            return 200
+            return self.headerImageHeight
         } else {
             return 44.0
         }
@@ -92,9 +94,7 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let imageView = cell.viewWithTag(300) as UIImageView
             
-            let url = "\(API_URL)/image.php?src=img/airports/shutterstock_\(self.airport.image).jpg&w=\(cell.frame.size.width)&h=200"
-            
-            println(url)
+            let url = "\(API_URL)/image.php?src=img/airports/shutterstock_\(self.selectedAirport.image).jpg&w=\(self.headerImageWidth)&h=\(self.headerImageHeight)"
             
             var imageRequest: NSURLRequest = NSURLRequest(URL: NSURL(string: url))
             
@@ -115,5 +115,14 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             return cell
         }
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+        let controller = segue.destinationViewController as FlightConnectionViewController
+        
+        let region = self.items[self.tableView.indexPathForSelectedRow().row-1] as Region
+        
+        controller.selectedAirport = selectedAirport;
+        controller.selectedRegion = region
     }
 }

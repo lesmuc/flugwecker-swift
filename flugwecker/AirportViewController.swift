@@ -10,13 +10,10 @@ import UIKit
 
 class AirportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
-    let API_URL = "http://www.flugwecker.de"    
     
     var items = [Airport]()
     
     @IBOutlet var tableView : UITableView!
-    
-    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
     
     var refreshControl:UIRefreshControl!
     
@@ -27,6 +24,11 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
+        
+        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Copperplate-Light", size: 20.0)]
+        
+        self.navigationController.navigationBar.titleTextAttributes = titleDict
+        self.navigationController.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -44,12 +46,14 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func loadItems() {
-        self.activityIndicatorView.startAnimating()
+        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
         Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         Alamofire.request(.GET, "\(API_URL)/airports-inside/de", parameters: nil).response {request, response, data, error in
-            let json = JSONValue(data as NSData)
+            
+            let json = JSONValue(data as NSData!)
             
             if json["airports"] {
                 
@@ -57,7 +61,10 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 for jsonAirport in json["airports"].array!{
                     let airport = Airport.decode(jsonAirport)
-                    self.items.append(airport)
+                    
+                    if airport.counterFlights > 0 {
+                        self.items.append(airport)
+                    }
                 }
             }
             
@@ -67,7 +74,7 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
                 self.refreshControl.endRefreshing()
             }
             
-            self.activityIndicatorView.stopAnimating()
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         }
     }
 
@@ -94,7 +101,7 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
 
         let airport = self.items[self.tableView.indexPathForSelectedRow().row]
         
-        controller.airport = airport;
+        controller.selectedAirport = airport;
     }
 }
 

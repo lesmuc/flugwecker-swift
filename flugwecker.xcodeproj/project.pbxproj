@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FD2B6257199CBE2900C1FC2F /* FlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B6256199CBE2900C1FC2F /* FlightViewController.swift */; };
+		FD2B6258199CBE2900C1FC2F /* FlightViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD2B6256199CBE2900C1FC2F /* FlightViewController.swift */; };
 		FD377E5019993AC700CEEAFD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD377E4F19993AC700CEEAFD /* Airport.swift */; };
 		FD377E5119993AC700CEEAFD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD377E4F19993AC700CEEAFD /* Airport.swift */; };
 		FD3D5C68199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
@@ -17,6 +19,41 @@
 		FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6C71998900D00D227FF /* Alamofire.swift */; };
 		FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
 		FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
+		FDCCD8FE19ACD3E2003D27CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCD8FD19ACD3E2003D27CD /* Constants.swift */; };
+		FDCCD8FF19ACD4D6003D27CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCD8FD19ACD3E2003D27CD /* Constants.swift */; };
+		FDF6AF6A19AA2BDD00AC4F7A /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */; };
+		FDF6AF6B19AA2BDD00AC4F7A /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */; };
+		FDF6AF6D19AA2D7A00AC4F7A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF6C19AA2D7A00AC4F7A /* Trip.swift */; };
+		FDF6AF6E19AA2D7A00AC4F7A /* Trip.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF6C19AA2D7A00AC4F7A /* Trip.swift */; };
+		FDF6AF7019AA455F00AC4F7A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF6AF6F19AA455F00AC4F7A /* FacebookSDK.framework */; };
+		FDF6AF7119AA455F00AC4F7A /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF6AF6F19AA455F00AC4F7A /* FacebookSDK.framework */; };
+		FDF6AF9319AA492400AC4F7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9219AA492400AC4F7A /* User.swift */; };
+		FDF6AF9419AA492400AC4F7A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9219AA492400AC4F7A /* User.swift */; };
+		FDF6AF9619AA4D9B00AC4F7A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9519AA4D9B00AC4F7A /* SignupViewController.swift */; };
+		FDF6AF9719AA4D9B00AC4F7A /* SignupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9519AA4D9B00AC4F7A /* SignupViewController.swift */; };
+		FDF6AF9919AB030200AC4F7A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9819AB030200AC4F7A /* LoginViewController.swift */; };
+		FDF6AF9A19AB030200AC4F7A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9819AB030200AC4F7A /* LoginViewController.swift */; };
+		FDF6AF9C19AB030F00AC4F7A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9B19AB030F00AC4F7A /* RegisterViewController.swift */; };
+		FDF6AF9D19AB030F00AC4F7A /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9B19AB030F00AC4F7A /* RegisterViewController.swift */; };
+		FDF6AF9F19AB031D00AC4F7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9E19AB031D00AC4F7A /* ProfileViewController.swift */; };
+		FDF6AFA019AB031D00AC4F7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9E19AB031D00AC4F7A /* ProfileViewController.swift */; };
+		FDF6AFB119AB10A600AC4F7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDF6AFB019AB10A600AC4F7A /* Localizable.strings */; };
+		FDF6AFB219AB10A600AC4F7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDF6AFB019AB10A600AC4F7A /* Localizable.strings */; };
+		FDF6AFD119AB393800AC4F7A /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */; };
+		FDF6AFD219AB393800AC4F7A /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */; };
+		FDF6AFD419AB395600AC4F7A /* VEResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */; };
+		FDF6AFD519AB395600AC4F7A /* VEResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */; };
+		FDF6AFF219AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */; };
+		FDF6AFF319AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */; };
+		FDF6AFF819AB835000AC4F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF6AFF719AB835000AC4F7A /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FDF6AFFA19ABA8A800AC4F7A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */; };
+		FDF6AFFB19ABA8A800AC4F7A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */; };
+		FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */; };
+		FDF86224199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */; };
+		FDF86226199BBB6100B1D104 /* FlightConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86225199BBB6100B1D104 /* FlightConnection.swift */; };
+		FDF86227199BBB6100B1D104 /* FlightConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86225199BBB6100B1D104 /* FlightConnection.swift */; };
+		FDF86229199BBB6900B1D104 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86228199BBB6900B1D104 /* Flight.swift */; };
+		FDF8622A199BBB6900B1D104 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86228199BBB6900B1D104 /* Flight.swift */; };
 		FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */; };
 		FDFF61BB1994BEFD005CAC28 /* AirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */; };
 		FDFF61C01994BEFD005CAC28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFF61BE1994BEFD005CAC28 /* Main.storyboard */; };
@@ -35,6 +72,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		FD2B6256199CBE2900C1FC2F /* FlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightViewController.swift; sourceTree = "<group>"; };
 		FD377E4F19993AC700CEEAFD /* Airport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		FD3D5C67199950EF00DEADBC /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -43,6 +81,28 @@
 		FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		FDC7B6C71998900D00D227FF /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Alamofire/Source/Alamofire.swift; sourceTree = SOURCE_ROOT; };
 		FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
+		FDCCD8FD19ACD3E2003D27CD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
+		FDF6AF6C19AA2D7A00AC4F7A /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
+		FDF6AF6F19AA455F00AC4F7A /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
+		FDF6AF7419AA466B00AC4F7A /* flugwecker-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "flugwecker-Bridging-Header.h"; path = "flugwecker/flugwecker-Bridging-Header.h"; sourceTree = "<group>"; };
+		FDF6AF7519AA466B00AC4F7A /* flugweckerTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "flugweckerTests-Bridging-Header.h"; path = "flugwecker/flugweckerTests-Bridging-Header.h"; sourceTree = "<group>"; };
+		FDF6AF9219AA492400AC4F7A /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		FDF6AF9519AA4D9B00AC4F7A /* SignupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignupViewController.swift; sourceTree = "<group>"; };
+		FDF6AF9819AB030200AC4F7A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		FDF6AF9B19AB030F00AC4F7A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		FDF6AF9E19AB031D00AC4F7A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FDF6AFB019AB10A600AC4F7A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
+		FDF6AFCF19AB393800AC4F7A /* ACSimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSimpleKeychain.h; sourceTree = "<group>"; };
+		FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSimpleKeychain.m; sourceTree = "<group>"; };
+		FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VEResizeImage.swift; sourceTree = "<group>"; };
+		FDF6AFF019AB7B6C00AC4F7A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
+		FDF6AFF719AB835000AC4F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightConnectionViewController.swift; sourceTree = "<group>"; };
+		FDF86225199BBB6100B1D104 /* FlightConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightConnection.swift; sourceTree = "<group>"; };
+		FDF86228199BBB6900B1D104 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
 		FDFF61B01994BEFD005CAC28 /* flugwecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flugwecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFF61B41994BEFD005CAC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +119,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF6AFF819AB835000AC4F7A /* UIKit.framework in Frameworks */,
+				FDF6AF7019AA455F00AC4F7A /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +128,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF6AF7119AA455F00AC4F7A /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -77,6 +140,10 @@
 			children = (
 				FD377E4F19993AC700CEEAFD /* Airport.swift */,
 				FD3D5C67199950EF00DEADBC /* Region.swift */,
+				FDF86225199BBB6100B1D104 /* FlightConnection.swift */,
+				FDF86228199BBB6900B1D104 /* Flight.swift */,
+				FDF6AF6C19AA2D7A00AC4F7A /* Trip.swift */,
+				FDF6AF9219AA492400AC4F7A /* User.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -101,8 +168,12 @@
 		FD7068481998EE5700FEA65B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FDF6AF7319AA465E00AC4F7A /* User */,
 				FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */,
 				FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */,
+				FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */,
+				FD2B6256199CBE2900C1FC2F /* FlightViewController.swift */,
+				FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -110,15 +181,67 @@
 		FD7068491998EE5D00FEA65B /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				FDF6AFEF19AB7B6400AC4F7A /* MBProgressHUD */,
+				FDF6AFCE19AB393100AC4F7A /* ACSimpleKeychain */,
 				FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */,
 				FDC7B6C71998900D00D227FF /* Alamofire.swift */,
 			);
 			name = Externals;
 			sourceTree = "<group>";
 		};
+		FDF6AF7319AA465E00AC4F7A /* User */ = {
+			isa = PBXGroup;
+			children = (
+				FDF6AF9519AA4D9B00AC4F7A /* SignupViewController.swift */,
+				FDF6AF9819AB030200AC4F7A /* LoginViewController.swift */,
+				FDF6AF9B19AB030F00AC4F7A /* RegisterViewController.swift */,
+				FDF6AF9E19AB031D00AC4F7A /* ProfileViewController.swift */,
+			);
+			name = User;
+			sourceTree = "<group>";
+		};
+		FDF6AFB719AB13E100AC4F7A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */,
+				FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		FDF6AFCE19AB393100AC4F7A /* ACSimpleKeychain */ = {
+			isa = PBXGroup;
+			children = (
+				FDF6AFCF19AB393800AC4F7A /* ACSimpleKeychain.h */,
+				FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */,
+			);
+			name = ACSimpleKeychain;
+			sourceTree = "<group>";
+		};
+		FDF6AFDC19AB599200AC4F7A /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Icons;
+			sourceTree = "<group>";
+		};
+		FDF6AFEF19AB7B6400AC4F7A /* MBProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				FDF6AFF019AB7B6C00AC4F7A /* MBProgressHUD.h */,
+				FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */,
+			);
+			name = MBProgressHUD;
+			sourceTree = "<group>";
+		};
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
+				FDF6AFF719AB835000AC4F7A /* UIKit.framework */,
+				FDF6AFB019AB10A600AC4F7A /* Localizable.strings */,
+				FDF6AF7419AA466B00AC4F7A /* flugwecker-Bridging-Header.h */,
+				FDF6AF7519AA466B00AC4F7A /* flugweckerTests-Bridging-Header.h */,
+				FDF6AF6F19AA455F00AC4F7A /* FacebookSDK.framework */,
 				FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */,
 				FDFF61B21994BEFD005CAC28 /* flugwecker */,
 				FDFF61CA1994BEFD005CAC28 /* flugweckerTests */,
@@ -139,6 +262,9 @@
 		FDFF61B21994BEFD005CAC28 /* flugwecker */ = {
 			isa = PBXGroup;
 			children = (
+				FDCCD8FD19ACD3E2003D27CD /* Constants.swift */,
+				FDF6AFDC19AB599200AC4F7A /* Icons */,
+				FDF6AFB719AB13E100AC4F7A /* Services */,
 				FD377E5219993ACB00CEEAFD /* Models */,
 				FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */,
 				FDFF61BE1994BEFD005CAC28 /* Main.storyboard */,
@@ -256,6 +382,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FDFF61C01994BEFD005CAC28 /* Main.storyboard in Resources */,
+				FDF6AFB119AB10A600AC4F7A /* Localizable.strings in Resources */,
 				FDFF61C21994BEFD005CAC28 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -264,6 +391,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF6AFB219AB10A600AC4F7A /* Localizable.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -276,10 +404,26 @@
 			files = (
 				FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */,
+				FDF6AFD119AB393800AC4F7A /* ACSimpleKeychain.m in Sources */,
 				FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */,
+				FDF86229199BBB6900B1D104 /* Flight.swift in Sources */,
+				FD2B6257199CBE2900C1FC2F /* FlightViewController.swift in Sources */,
+				FDCCD8FE19ACD3E2003D27CD /* Constants.swift in Sources */,
 				FD377E5019993AC700CEEAFD /* Airport.swift in Sources */,
+				FDF6AF9F19AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
+				FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
+				FDF6AF6D19AA2D7A00AC4F7A /* Trip.swift in Sources */,
 				FD3D5C68199950EF00DEADBC /* Region.swift in Sources */,
 				FDFF61BB1994BEFD005CAC28 /* AirportViewController.swift in Sources */,
+				FDF6AF6A19AA2BDD00AC4F7A /* TripViewController.swift in Sources */,
+				FDF6AFF219AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */,
+				FDF86226199BBB6100B1D104 /* FlightConnection.swift in Sources */,
+				FDF6AF9919AB030200AC4F7A /* LoginViewController.swift in Sources */,
+				FDF6AF9C19AB030F00AC4F7A /* RegisterViewController.swift in Sources */,
+				FDF6AFD419AB395600AC4F7A /* VEResizeImage.swift in Sources */,
+				FDF6AF9619AA4D9B00AC4F7A /* SignupViewController.swift in Sources */,
+				FDF6AFFA19ABA8A800AC4F7A /* ImageService.swift in Sources */,
+				FDF6AF9319AA492400AC4F7A /* User.swift in Sources */,
 				FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,12 +432,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDF6AF6E19AA2D7A00AC4F7A /* Trip.swift in Sources */,
+				FDCCD8FF19ACD4D6003D27CD /* Constants.swift in Sources */,
+				FDF8622A199BBB6900B1D104 /* Flight.swift in Sources */,
 				FD377E5119993AC700CEEAFD /* Airport.swift in Sources */,
+				FDF6AF9A19AB030200AC4F7A /* LoginViewController.swift in Sources */,
+				FD2B6258199CBE2900C1FC2F /* FlightViewController.swift in Sources */,
+				FDF6AF9419AA492400AC4F7A /* User.swift in Sources */,
 				FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */,
+				FDF6AFF319AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */,
+				FDF6AFD219AB393800AC4F7A /* ACSimpleKeychain.m in Sources */,
+				FDF6AFA019AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
 				FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 				FD3D5C69199950EF00DEADBC /* Region.swift in Sources */,
+				FDF6AF9719AA4D9B00AC4F7A /* SignupViewController.swift in Sources */,
+				FDF6AF6B19AA2BDD00AC4F7A /* TripViewController.swift in Sources */,
+				FDF6AFD519AB395600AC4F7A /* VEResizeImage.swift in Sources */,
+				FDF6AF9D19AB030F00AC4F7A /* RegisterViewController.swift in Sources */,
 				FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */,
+				FDF86224199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */,
+				FDF86227199BBB6100B1D104 /* FlightConnection.swift in Sources */,
+				FDF6AFFB19ABA8A800AC4F7A /* ImageService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -404,14 +564,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = flugwecker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugwecker-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -423,14 +585,17 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = flugwecker/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugwecker-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -452,7 +617,7 @@
 				INFOPLIST_FILE = flugweckerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugweckerTests-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flugwecker.app/flugwecker";
 			};
@@ -471,7 +636,7 @@
 				INFOPLIST_FILE = flugweckerTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugweckerTests-Bridging-Header.h";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/flugwecker.app/flugwecker";
 			};
 			name = Release;

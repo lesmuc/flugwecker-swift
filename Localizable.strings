@@ -1,0 +1,29 @@
+/* 
+  Localizable.strings
+  flugwecker
+
+  Created by Udo von Eynern on 25.08.14.
+  Copyright (c) 2014 Udo von Eynern. All rights reserved.
+*/
+
+"Logout"="Abmelden";
+"Welcome, %@!"="Hallo, %@!";
+"Welcome"="Willkommen";
+"Login"="Anmelden";
+"Sign in via Facebook"="Via Facebook anmelden";
+"Sign in via Foursquare"="Via Foursquare anmelden";
+"Register"="Registrieren";
+"Missing username."="Benutzername fehlt.";
+"Missing email."="E-Mail fehlt.";
+"Public display name already exists."="Benutzername ist bereits vergeben.";
+"Unknown Location"="Unknown Location";
+"Profile"="Profil";
+"Turn on Location Services to allow \"%@\" to determine your Location"="Bitte die Ortungsdienste für \"%@\" aktivieren";
+"This will make it much easier to find and record interesting questions nearby."="Nur so können wir auch interessante Fragen aus der Umgebung finden.";
+"Settings"="Einstellungen";
+"Error"="Fehler";
+
+"Could not create user."="Leider konnte der Benutzer nicht erstellt werden.";
+"email" = "E-Mail";
+"username" ="Benutzername";
+"A record matching the input was found"="Bereits vorhanden.";
