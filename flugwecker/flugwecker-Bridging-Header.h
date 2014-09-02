@@ -4,6 +4,4 @@
 
 #import <FacebookSDK/FacebookSDK.h>
 
-#import "ACSimpleKeychain.h"
-
 #import "MBProgressHUD.h"

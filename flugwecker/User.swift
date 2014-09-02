@@ -14,10 +14,10 @@ struct User {
     let email : String!
     let password : String!
     
-    let facebookId : String!
-    let foursquareId : String!
+    let facebookId : String?
+    let foursquareId : String?
     
-    let imagePath : String!
+    let imagePath : String?
     
     static func decode(json: JSONValue) -> User {
         
@@ -26,10 +26,10 @@ struct User {
         var email = json["email"].string as String!
         var password = json["password"].string as String!
         
-        var facebookId = json["facebookId"].string as String!
-        var foursquareId = json["foursquareId"].string as String!
+        var facebookId = json["facebookId"].string as String?
+        var foursquareId = json["foursquareId"].string as String?
 
-        var imagePath = json["imagePath"].string as String!
+        var imagePath = json["imagePath"].string as String?
         
         return User(id: id, username: username, email: email, password: password, facebookId: facebookId, foursquareId: foursquareId, imagePath: imagePath);
     }

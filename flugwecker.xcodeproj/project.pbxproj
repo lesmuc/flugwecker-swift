@@ -13,6 +13,10 @@
 		FD377E5119993AC700CEEAFD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD377E4F19993AC700CEEAFD /* Airport.swift */; };
 		FD3D5C68199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
 		FD3D5C69199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
+		FDB0509719B5F32B00EA10AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB0509619B5F32B00EA10AA /* Security.framework */; };
+		FDB0509819B5F33900EA10AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB0509619B5F32B00EA10AA /* Security.framework */; };
+		FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0509919B5F5FA00EA10AA /* KeychainService.swift */; };
+		FDB0509B19B5F5FA00EA10AA /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0509919B5F5FA00EA10AA /* KeychainService.swift */; };
 		FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */; };
 		FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */; };
 		FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6C71998900D00D227FF /* Alamofire.swift */; };
@@ -39,15 +43,13 @@
 		FDF6AFA019AB031D00AC4F7A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF9E19AB031D00AC4F7A /* ProfileViewController.swift */; };
 		FDF6AFB119AB10A600AC4F7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDF6AFB019AB10A600AC4F7A /* Localizable.strings */; };
 		FDF6AFB219AB10A600AC4F7A /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = FDF6AFB019AB10A600AC4F7A /* Localizable.strings */; };
-		FDF6AFD119AB393800AC4F7A /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */; };
-		FDF6AFD219AB393800AC4F7A /* ACSimpleKeychain.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */; };
-		FDF6AFD419AB395600AC4F7A /* VEResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */; };
-		FDF6AFD519AB395600AC4F7A /* VEResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */; };
+		FDF6AFD419AB395600AC4F7A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD319AB395600AC4F7A /* UserService.swift */; };
+		FDF6AFD519AB395600AC4F7A /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFD319AB395600AC4F7A /* UserService.swift */; };
 		FDF6AFF219AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */; };
 		FDF6AFF319AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */; };
 		FDF6AFF819AB835000AC4F7A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDF6AFF719AB835000AC4F7A /* UIKit.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		FDF6AFFA19ABA8A800AC4F7A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */; };
-		FDF6AFFB19ABA8A800AC4F7A /* ImageService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */; };
+		FDF6AFFA19ABA8A800AC4F7A /* VEResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF919ABA8A800AC4F7A /* VEResizeImage.swift */; };
+		FDF6AFFB19ABA8A800AC4F7A /* VEResizeImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AFF919ABA8A800AC4F7A /* VEResizeImage.swift */; };
 		FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */; };
 		FDF86224199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */; };
 		FDF86226199BBB6100B1D104 /* FlightConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86225199BBB6100B1D104 /* FlightConnection.swift */; };
@@ -78,6 +80,8 @@
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
+		FDB0509619B5F32B00EA10AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		FDB0509919B5F5FA00EA10AA /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
 		FDC7B6C71998900D00D227FF /* Alamofire.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alamofire.swift; path = Alamofire/Source/Alamofire.swift; sourceTree = SOURCE_ROOT; };
 		FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
@@ -93,13 +97,11 @@
 		FDF6AF9B19AB030F00AC4F7A /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		FDF6AF9E19AB031D00AC4F7A /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FDF6AFB019AB10A600AC4F7A /* Localizable.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = Localizable.strings; sourceTree = "<group>"; };
-		FDF6AFCF19AB393800AC4F7A /* ACSimpleKeychain.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ACSimpleKeychain.h; sourceTree = "<group>"; };
-		FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ACSimpleKeychain.m; sourceTree = "<group>"; };
-		FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VEResizeImage.swift; sourceTree = "<group>"; };
+		FDF6AFD319AB395600AC4F7A /* UserService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
 		FDF6AFF019AB7B6C00AC4F7A /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
 		FDF6AFF119AB7B6C00AC4F7A /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		FDF6AFF719AB835000AC4F7A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
-		FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageService.swift; sourceTree = "<group>"; };
+		FDF6AFF919ABA8A800AC4F7A /* VEResizeImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VEResizeImage.swift; sourceTree = "<group>"; };
 		FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightConnectionViewController.swift; sourceTree = "<group>"; };
 		FDF86225199BBB6100B1D104 /* FlightConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightConnection.swift; sourceTree = "<group>"; };
 		FDF86228199BBB6900B1D104 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB0509719B5F32B00EA10AA /* Security.framework in Frameworks */,
 				FDF6AFF819AB835000AC4F7A /* UIKit.framework in Frameworks */,
 				FDF6AF7019AA455F00AC4F7A /* FacebookSDK.framework in Frameworks */,
 			);
@@ -128,6 +131,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FDB0509819B5F33900EA10AA /* Security.framework in Frameworks */,
 				FDF6AF7119AA455F00AC4F7A /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -182,7 +186,6 @@
 			isa = PBXGroup;
 			children = (
 				FDF6AFEF19AB7B6400AC4F7A /* MBProgressHUD */,
-				FDF6AFCE19AB393100AC4F7A /* ACSimpleKeychain */,
 				FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */,
 				FDC7B6C71998900D00D227FF /* Alamofire.swift */,
 			);
@@ -203,19 +206,11 @@
 		FDF6AFB719AB13E100AC4F7A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				FDF6AFD319AB395600AC4F7A /* VEResizeImage.swift */,
-				FDF6AFF919ABA8A800AC4F7A /* ImageService.swift */,
+				FDF6AFD319AB395600AC4F7A /* UserService.swift */,
+				FDF6AFF919ABA8A800AC4F7A /* VEResizeImage.swift */,
+				FDB0509919B5F5FA00EA10AA /* KeychainService.swift */,
 			);
 			name = Services;
-			sourceTree = "<group>";
-		};
-		FDF6AFCE19AB393100AC4F7A /* ACSimpleKeychain */ = {
-			isa = PBXGroup;
-			children = (
-				FDF6AFCF19AB393800AC4F7A /* ACSimpleKeychain.h */,
-				FDF6AFD019AB393800AC4F7A /* ACSimpleKeychain.m */,
-			);
-			name = ACSimpleKeychain;
 			sourceTree = "<group>";
 		};
 		FDF6AFDC19AB599200AC4F7A /* Icons */ = {
@@ -237,6 +232,7 @@
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
+				FDB0509619B5F32B00EA10AA /* Security.framework */,
 				FDF6AFF719AB835000AC4F7A /* UIKit.framework */,
 				FDF6AFB019AB10A600AC4F7A /* Localizable.strings */,
 				FDF6AF7419AA466B00AC4F7A /* flugwecker-Bridging-Header.h */,
@@ -404,12 +400,12 @@
 			files = (
 				FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */,
-				FDF6AFD119AB393800AC4F7A /* ACSimpleKeychain.m in Sources */,
 				FDC7B6C81998900D00D227FF /* Alamofire.swift in Sources */,
 				FDF86229199BBB6900B1D104 /* Flight.swift in Sources */,
 				FD2B6257199CBE2900C1FC2F /* FlightViewController.swift in Sources */,
 				FDCCD8FE19ACD3E2003D27CD /* Constants.swift in Sources */,
 				FD377E5019993AC700CEEAFD /* Airport.swift in Sources */,
+				FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */,
 				FDF6AF9F19AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
 				FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDF6AF6D19AA2D7A00AC4F7A /* Trip.swift in Sources */,
@@ -420,9 +416,9 @@
 				FDF86226199BBB6100B1D104 /* FlightConnection.swift in Sources */,
 				FDF6AF9919AB030200AC4F7A /* LoginViewController.swift in Sources */,
 				FDF6AF9C19AB030F00AC4F7A /* RegisterViewController.swift in Sources */,
-				FDF6AFD419AB395600AC4F7A /* VEResizeImage.swift in Sources */,
+				FDF6AFD419AB395600AC4F7A /* UserService.swift in Sources */,
 				FDF6AF9619AA4D9B00AC4F7A /* SignupViewController.swift in Sources */,
-				FDF6AFFA19ABA8A800AC4F7A /* ImageService.swift in Sources */,
+				FDF6AFFA19ABA8A800AC4F7A /* VEResizeImage.swift in Sources */,
 				FDF6AF9319AA492400AC4F7A /* User.swift in Sources */,
 				FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 			);
@@ -441,19 +437,19 @@
 				FDF6AF9419AA492400AC4F7A /* User.swift in Sources */,
 				FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDF6AFF319AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */,
-				FDF6AFD219AB393800AC4F7A /* ACSimpleKeychain.m in Sources */,
 				FDF6AFA019AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
 				FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 				FD3D5C69199950EF00DEADBC /* Region.swift in Sources */,
 				FDF6AF9719AA4D9B00AC4F7A /* SignupViewController.swift in Sources */,
 				FDF6AF6B19AA2BDD00AC4F7A /* TripViewController.swift in Sources */,
-				FDF6AFD519AB395600AC4F7A /* VEResizeImage.swift in Sources */,
+				FDF6AFD519AB395600AC4F7A /* UserService.swift in Sources */,
+				FDB0509B19B5F5FA00EA10AA /* KeychainService.swift in Sources */,
 				FDF6AF9D19AB030F00AC4F7A /* RegisterViewController.swift in Sources */,
 				FDC7B6C91998900D00D227FF /* Alamofire.swift in Sources */,
 				FDF86224199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */,
 				FDF86227199BBB6100B1D104 /* FlightConnection.swift in Sources */,
-				FDF6AFFB19ABA8A800AC4F7A /* ImageService.swift in Sources */,
+				FDF6AFFB19ABA8A800AC4F7A /* VEResizeImage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

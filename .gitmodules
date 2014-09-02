@@ -7,9 +7,6 @@
 [submodule "hex-codes-in-swift"]
 	path = hex-codes-in-swift
 	url = https://github.com/aleclarson/hex-codes-in-swift
-[submodule "ACSimpleKeychain"]
-	path = ACSimpleKeychain
-	url = https://github.com/alexchugunov/ACSimpleKeychain
 [submodule "MBProgressHUD"]
 	path = MBProgressHUD
 	url = https://github.com/jdg/MBProgressHUD

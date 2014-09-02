@@ -32,6 +32,9 @@ class SignupViewController: UIViewController {
     }
     
     func logoutButtonAction(sender: AnyObject) {
+        KeychainService.deleteUserJSON()
+        
+        self.buildGUI()
         
     }
     
@@ -49,7 +52,14 @@ class SignupViewController: UIViewController {
         
         if UserService.isUserLoggedIn() == true {
             
+            var jsonUserString:String = KeychainService.loadUserJSON()
+            
+            let data = (jsonUserString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
+            let json = JSONValue(data as NSData!)
+            let user = User.decode(json)
+            
             self.title = NSLocalizedString("Logout", comment: "")
+            self.navigationItem.title = user.username
             self.loginButton.setTitle(NSLocalizedString("Logout", comment: ""), forState: UIControlState.Normal)
             self.registerButton.hidden = true
             self.facebookButton.hidden = true

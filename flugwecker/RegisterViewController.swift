@@ -117,35 +117,38 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
         
         Alamofire.request(.POST, "\(API_URL)/api/user", parameters: parameters).response {request, response, data, error in
             
-                let json = JSONValue(data as NSData!)
+            let json = JSONValue(data as NSData!)
+        
+            let statusCode = response?.statusCode as Int!
+        
+            println(statusCode)
+        
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+        
+            if statusCode == 201 { // Created Successfully
                 
-                let response = response
+                KeychainService.saveUserJSON(json.description)
+                    
+                self.navigationController.popViewControllerAnimated(true);
                 
-                if (self.checkAndDisplayErrors(json) == true) {
-                    
-                    var user = User.decode(json["data"])
-                    
-                    let keychain:ACSimpleKeychain = ACSimpleKeychain.defaultKeychain() as ACSimpleKeychain
-                    
-                    
-                    keychain.storeUsername(user.username as String!, password: user.password, identifier: user.id, forService:"flugwecker")
-                    
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                    
-                    self.navigationController.popViewControllerAnimated(true);
-                }
+            } else {
+                
+                self.checkAndDisplayErrors(statusCode, jsonError:json)
+                
+            }
         }
     }
     
-    func checkAndDisplayErrors(json:JSONValue) -> Bool {
-        if let message = json["error"]["message"].string {
+    func checkAndDisplayErrors(statusCode:Int, jsonError:JSONValue) -> Bool {
+        
+        let alertTitle = NSLocalizedString("Error", comment: "")
+        let okayString = NSLocalizedString("OK", comment: "")
+        
+        if let message = jsonError["error"]["message"].string {
             
             var additionalFieldErrorMessages = Array<String>()
             
-            let alertTitle = NSLocalizedString("Error", comment: "")
-            let okayString = NSLocalizedString("OK", comment: "")
-            
-            var errors = json["error"]["errors"].object as Dictionary<String, JSONValue>!
+            var errors = jsonError["error"]["errors"].object as Dictionary<String, JSONValue>!
             
             for (field, fieldErrors) in errors {
                 let localizedFieldTitle = NSLocalizedString(field, comment: "")
@@ -153,15 +156,11 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
                 var dictionaryErrors = fieldErrors.object as Dictionary<String, JSONValue>!
                 
                 for (errorType, errorMessage) in dictionaryErrors {
-                    println(errorType)
-                    println()
                     
                     let localizedErrorMessage = NSLocalizedString(errorMessage.string as String!, comment: "")
                     
                     additionalFieldErrorMessages.append(localizedFieldTitle + ": " + localizedErrorMessage)
                 }
-                
-                
             }
             
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
@@ -176,7 +175,19 @@ class RegisterViewController: UIViewController, UIImagePickerControllerDelegate,
             
             return false
         } else {
-            return true
+
+            if statusCode >= 400 {
+                let message = NSLocalizedString("An unknown error has occurred.", comment: "") + " (\(statusCode))"
+                
+                let alert = UIAlertView()
+                alert.title = NSLocalizedString(message, comment: "")
+                alert.addButtonWithTitle(okayString)
+                alert.show()
+                return false
+            } else {
+                return true
+            }
+            
         }
     }
     
