@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class FlightConnectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -112,18 +113,20 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
             
             let flightConnection: FlightConnection = self.items[indexPath.row-1]
             
-            cell.textLabel.text = flightConnection.destination.name
+            cell.textLabel?.text = flightConnection.destination.name
             
-            cell.detailTextLabel.text = "ab " + String(format:"%.0f", flightConnection.minPrice) + " €"
+            cell.detailTextLabel?.text = "ab " + String(format:"%.0f", flightConnection.minPrice) + " €"
             
             return cell
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let controller = segue.destinationViewController as FlightViewController
         
-        let flightConnection = self.items[self.tableView.indexPathForSelectedRow().row-1] as FlightConnection
+        var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
+        
+        let flightConnection = self.items[selectedIndexPathRow-1] as FlightConnection
         
         controller.selectedAirport = selectedAirport
         controller.selectedRegion = selectedRegion

@@ -26,8 +26,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Copperplate-Light", size: 20.0)]
         
-        self.navigationController.navigationBar.titleTextAttributes = titleDict
-        self.navigationController.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
+        self.navigationController?.navigationBar.titleTextAttributes = titleDict
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
         
         self.title = "Abflug"
     }
@@ -90,14 +90,16 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let name = trip.name
         
-        cell.textLabel.text = name;
+        cell.textLabel?.text = name;
         
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let controller = segue.destinationViewController as RegionViewController
         
-        let trip = self.items[self.tableView.indexPathForSelectedRow().row]
+        var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
+        
+        let trip = self.items[selectedIndexPathRow]
     }
 }

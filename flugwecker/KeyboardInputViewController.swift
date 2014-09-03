@@ -38,7 +38,7 @@ class KeyboardInputViewController: UIViewController {
     func textFieldDidBeginEditing(textField: UITextField!) {
         self.activeTextField = textField
         
-        println("active textfield: " + self.activeTextField.placeholder)
+        println("active textfield: \(self.activeTextField.placeholder)")
         
         self.updatePosition()
     }

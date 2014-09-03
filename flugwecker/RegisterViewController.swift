@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RegisterViewController: KeyboardInputViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
     
@@ -85,7 +86,7 @@ class RegisterViewController: KeyboardInputViewController, UIImagePickerControll
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         let parameters = [
             "username": self.usernameTextField.text,
@@ -108,7 +109,7 @@ class RegisterViewController: KeyboardInputViewController, UIImagePickerControll
                 
                 KeychainService.saveUserJSON(json.description)
                     
-                self.navigationController.popViewControllerAnimated(true);
+                self.navigationController?.popViewControllerAnimated(true);
                 
             } else {
                 

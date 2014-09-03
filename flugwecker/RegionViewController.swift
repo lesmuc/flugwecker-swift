@@ -8,6 +8,8 @@
 
 import UIKit
 
+import Alamofire
+
 class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var items = [Region]()
@@ -111,16 +113,18 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let region: Region = self.items[indexPath.row-1]
             
-            cell.textLabel.text = region.name
+            cell.textLabel?.text = region.name
             
             return cell
         }
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let controller = segue.destinationViewController as FlightConnectionViewController
         
-        let region = self.items[self.tableView.indexPathForSelectedRow().row-1] as Region
+        var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
+        
+        let region = self.items[selectedIndexPathRow-1] as Region
         
         controller.selectedAirport = selectedAirport;
         controller.selectedRegion = region

@@ -63,7 +63,7 @@ class FlightViewController: UIViewController, UITableViewDelegate, UITableViewDa
             
             let flight: Flight = self.selectedFlightConnection.flights[indexPath.row-1]
             
-            cell.detailTextLabel.text = String(format:"%.0f", flight.price) + " €"
+            cell.detailTextLabel?.text = String(format:"%.0f", flight.price) + " €"
             
             var inputFormatter : NSDateFormatter = NSDateFormatter()
             inputFormatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
@@ -73,7 +73,7 @@ class FlightViewController: UIViewController, UITableViewDelegate, UITableViewDa
             var outputFormatter : NSDateFormatter = NSDateFormatter()
             outputFormatter.dateFormat = "EEEE dd.MM.yyyy"
 
-            cell.textLabel.text = outputFormatter.stringFromDate(departureDate) + " - " + outputFormatter.stringFromDate(returnDate)
+            cell.textLabel?.text = outputFormatter.stringFromDate(departureDate) + " - " + outputFormatter.stringFromDate(returnDate)
 
             return cell
         }

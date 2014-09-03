@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class AirportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -27,8 +28,8 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Copperplate-Light", size: 20.0)]
         
-        self.navigationController.navigationBar.titleTextAttributes = titleDict
-        self.navigationController.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
+        self.navigationController?.navigationBar.titleTextAttributes = titleDict
+        self.navigationController?.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -49,7 +50,7 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         Alamofire.request(.GET, "\(API_URL)/airports-inside/de", parameters: nil).response {request, response, data, error in
             
@@ -91,15 +92,17 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let name = airport.name
         
-        cell.textLabel.text = name;
+        cell.textLabel?.text = name;
         
         return cell
     }
     
-    override func prepareForSegue(segue: UIStoryboardSegue!, sender: AnyObject!) {
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
         let controller = segue.destinationViewController as RegionViewController
+        
+        var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
 
-        let airport = self.items[self.tableView.indexPathForSelectedRow().row]
+        let airport = self.items[selectedIndexPathRow]
         
         controller.selectedAirport = airport;
     }

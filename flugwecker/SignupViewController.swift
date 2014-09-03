@@ -28,9 +28,9 @@ class SignupViewController: UIViewController {
     }
     
     func loginButtonAction(sender: AnyObject) {
-        var loginViewController:LoginViewController = self.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
+        var loginViewController:LoginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
         
-        self.navigationController.pushViewController(loginViewController, animated: true)
+        self.navigationController?.pushViewController(loginViewController, animated: true)
         
     }
     

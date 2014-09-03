@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class LoginViewController: KeyboardInputViewController {
     
@@ -42,7 +43,7 @@ class LoginViewController: KeyboardInputViewController {
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         let parameters = [
             "email": self.emailTextField.text,
@@ -66,7 +67,7 @@ class LoginViewController: KeyboardInputViewController {
                 
                 KeychainService.saveUserJSON(json.description)
                 
-                self.navigationController.popViewControllerAnimated(true);
+                self.navigationController?.popViewControllerAnimated(true);
                 
             } else {
                 
