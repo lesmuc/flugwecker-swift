@@ -28,6 +28,9 @@ class SignupViewController: UIViewController {
     }
     
     func loginButtonAction(sender: AnyObject) {
+        var loginViewController:LoginViewController = self.storyboard.instantiateViewControllerWithIdentifier("LoginViewController") as LoginViewController
+        
+        self.navigationController.pushViewController(loginViewController, animated: true)
         
     }
     
@@ -74,14 +77,4 @@ class SignupViewController: UIViewController {
             self.loginButton.addTarget(self, action: "loginButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         }
     }
-    
-    func loginButtonAction(sender: UIButton) {
-        
-    }
-    
-    func logoutButtonAction(sender: UIButton) {
-        
-    }
-    
-    
 }
