@@ -114,18 +114,18 @@ class KeyboardInputViewController: UIViewController {
             
             var additionalFieldErrorMessages = Array<String>()
             
-            var errors = jsonError["error"]["errors"].object as Dictionary<String, JSONValue>!
-            
-            for (field, fieldErrors) in errors {
-                let localizedFieldTitle = NSLocalizedString(field, comment: "")
-                
-                var dictionaryErrors = fieldErrors.object as Dictionary<String, JSONValue>!
-                
-                for (errorType, errorMessage) in dictionaryErrors {
+            if var errors = jsonError["error"]["errors"].object as Dictionary<String, JSONValue>! {
+                for (field, fieldErrors) in errors {
+                    let localizedFieldTitle = NSLocalizedString(field, comment: "")
                     
-                    let localizedErrorMessage = NSLocalizedString(errorMessage.string as String!, comment: "")
+                    var dictionaryErrors = fieldErrors.object as Dictionary<String, JSONValue>!
                     
-                    additionalFieldErrorMessages.append(localizedFieldTitle + ": " + localizedErrorMessage)
+                    for (errorType, errorMessage) in dictionaryErrors {
+                        
+                        let localizedErrorMessage = NSLocalizedString(errorMessage.string as String!, comment: "")
+                        
+                        additionalFieldErrorMessages.append(localizedFieldTitle + ": " + localizedErrorMessage)
+                    }
                 }
             }
             
@@ -135,7 +135,11 @@ class KeyboardInputViewController: UIViewController {
             
             let alert = UIAlertView()
             alert.title = NSLocalizedString(message, comment: "")
-            alert.message =  joiner.join(additionalFieldErrorMessages)
+            
+            if additionalFieldErrorMessages.count > 0 {
+                alert.message =  joiner.join(additionalFieldErrorMessages)
+            }
+
             alert.addButtonWithTitle(okayString)
             alert.show()
             

@@ -101,8 +101,6 @@ class RegisterViewController: KeyboardInputViewController, UIImagePickerControll
         
             let statusCode = response?.statusCode as Int!
         
-            println(statusCode)
-        
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
         
             if statusCode == 201 { // Created Successfully

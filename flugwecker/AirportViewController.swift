@@ -56,6 +56,8 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
             
             let json = JSONValue(data as NSData!)
             
+            JSONValue(data as NSData!)
+            
             if json["airports"] {
                 
                 self.items.removeAll(keepCapacity: true)

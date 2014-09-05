@@ -9,15 +9,10 @@
 import Foundation
 
 struct User {
-    let id : String!
-    let username : String!
-    let email : String!
-    let password : String!
-    
-    let facebookId : String?
-    let foursquareId : String?
-    
-    let imagePath : String?
+    var id : String!
+    var username : String!
+    var email : String!
+    var password : String!
     
     static func decode(json: JSONValue) -> User {
         
@@ -26,11 +21,29 @@ struct User {
         var email = json["email"].string as String!
         var password = json["password"].string as String!
         
-        var facebookId = json["facebookId"].string as String?
-        var foursquareId = json["foursquareId"].string as String?
-
-        var imagePath = json["imagePath"].string as String?
+        return User(id: id, username: username, email: email, password: password);
+    }
+    
+    func toDictionary() -> NSMutableDictionary {
         
-        return User(id: id, username: username, email: email, password: password, facebookId: facebookId, foursquareId: foursquareId, imagePath: imagePath);
+        var properties = NSMutableDictionary()
+        
+        if self.id != nil {
+            properties["user_id"] = self.id
+        }
+
+        if self.username != nil {
+            properties["username"] = self.username
+        }
+        
+        if self.email != nil {
+            properties["email"] = self.email
+        }
+        
+        if self.password != nil {
+            properties["password"] = self.password
+        }
+        
+        return properties
     }
 }

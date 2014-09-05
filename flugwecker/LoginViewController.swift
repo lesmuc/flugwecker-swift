@@ -50,12 +50,16 @@ class LoginViewController: KeyboardInputViewController {
             "password" : self.passwordTextField.text,
         ]
         
+        let plainString = "\(self.emailTextField.text):\(self.passwordTextField.text)" as NSString
+        let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
+        let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
+        Manager.sharedInstance.defaultHeaders["Authorization"] = "Basic " + base64String!
+        
         Alamofire
-            .request(.POST, "\(API_URL)/api/user", parameters: parameters)
-            .authenticate(HTTPBasic: self.emailTextField.text, password: self.passwordTextField.text)
+            .request(.POST, "\(API_URL)/api/user?XDEBUG_SESSION_START")
             .response {request, response, data, error in
             
-            let json = JSONValue(data as NSData!)
+            var json = JSONValue(data as NSData!)
             
             let statusCode = response?.statusCode as Int!
             
@@ -63,7 +67,12 @@ class LoginViewController: KeyboardInputViewController {
             
             MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             
-            if statusCode == 201 { // Created Successfully
+            if statusCode == 200 { // Logged in Successfully
+                
+                var user = User.decode(json)
+                user.password = self.passwordTextField.text
+                
+                var json = JSONValue(user.toDictionary())
                 
                 KeychainService.saveUserJSON(json.description)
                 

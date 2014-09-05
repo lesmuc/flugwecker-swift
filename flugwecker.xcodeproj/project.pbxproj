@@ -13,6 +13,8 @@
 		FD377E5119993AC700CEEAFD /* Airport.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD377E4F19993AC700CEEAFD /* Airport.swift */; };
 		FD3D5C68199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
 		FD3D5C69199950EF00DEADBC /* Region.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD3D5C67199950EF00DEADBC /* Region.swift */; };
+		FD8FB01919B98CBF00D4965B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */; };
+		FD8FB01A19B98CBF00D4965B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */; };
 		FDB0509719B5F32B00EA10AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB0509619B5F32B00EA10AA /* Security.framework */; };
 		FDB0509819B5F33900EA10AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB0509619B5F32B00EA10AA /* Security.framework */; };
 		FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0509919B5F5FA00EA10AA /* KeychainService.swift */; };
@@ -21,8 +23,6 @@
 		FDB050A119B6E6D900EA10AA /* KeyboardInputViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0509F19B6E6D900EA10AA /* KeyboardInputViewController.swift */; };
 		FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */; };
 		FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */; };
-		FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
-		FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */; };
 		FDCCD8FE19ACD3E2003D27CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCD8FD19ACD3E2003D27CD /* Constants.swift */; };
 		FDCCD8FF19ACD4D6003D27CD /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDCCD8FD19ACD3E2003D27CD /* Constants.swift */; };
 		FDF6AF6A19AA2BDD00AC4F7A /* TripViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */; };
@@ -102,11 +102,12 @@
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
 		FD88009019B72CFB001F011E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
+		FD8FB01719B98CBF00D4965B /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyJSON.h; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.h; sourceTree = SOURCE_ROOT; };
+		FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		FDB0509619B5F32B00EA10AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FDB0509919B5F5FA00EA10AA /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FDB0509F19B6E6D900EA10AA /* KeyboardInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputViewController.swift; sourceTree = "<group>"; };
 		FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegionViewController.swift; sourceTree = "<group>"; };
-		FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		FDCCD8FD19ACD3E2003D27CD /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TripViewController.swift; sourceTree = "<group>"; };
 		FDF6AF6C19AA2D7A00AC4F7A /* Trip.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Trip.swift; sourceTree = "<group>"; };
@@ -208,8 +209,9 @@
 		FD7068491998EE5D00FEA65B /* Externals */ = {
 			isa = PBXGroup;
 			children = (
+				FD8FB01719B98CBF00D4965B /* SwiftyJSON.h */,
+				FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */,
 				FDF6AFEF19AB7B6400AC4F7A /* MBProgressHUD */,
-				FDC7B6CA1998B16100D227FF /* SwiftyJSON.swift */,
 			);
 			name = Externals;
 			sourceTree = "<group>";
@@ -462,6 +464,7 @@
 				FD377E5019993AC700CEEAFD /* Airport.swift in Sources */,
 				FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */,
 				FDF6AF9F19AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
+				FD8FB01919B98CBF00D4965B /* SwiftyJSON.swift in Sources */,
 				FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDF6AF6D19AA2D7A00AC4F7A /* Trip.swift in Sources */,
 				FD3D5C68199950EF00DEADBC /* Region.swift in Sources */,
@@ -476,7 +479,6 @@
 				FDB050A019B6E6D900EA10AA /* KeyboardInputViewController.swift in Sources */,
 				FDF6AFFA19ABA8A800AC4F7A /* VEResizeImage.swift in Sources */,
 				FDF6AF9319AA492400AC4F7A /* User.swift in Sources */,
-				FDC7B6CB1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -487,6 +489,7 @@
 				FDF6AF6E19AA2D7A00AC4F7A /* Trip.swift in Sources */,
 				FDCCD8FF19ACD4D6003D27CD /* Constants.swift in Sources */,
 				FDF8622A199BBB6900B1D104 /* Flight.swift in Sources */,
+				FD8FB01A19B98CBF00D4965B /* SwiftyJSON.swift in Sources */,
 				FD377E5119993AC700CEEAFD /* Airport.swift in Sources */,
 				FDF6AF9A19AB030200AC4F7A /* LoginViewController.swift in Sources */,
 				FD2B6258199CBE2900C1FC2F /* FlightViewController.swift in Sources */,
@@ -494,7 +497,6 @@
 				FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDF6AFF319AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */,
 				FDF6AFA019AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
-				FDC7B6CC1998B16100D227FF /* SwiftyJSON.swift in Sources */,
 				FD3D5C69199950EF00DEADBC /* Region.swift in Sources */,
 				FDF6AF9719AA4D9B00AC4F7A /* SignupViewController.swift in Sources */,
 				FDB050A119B6E6D900EA10AA /* KeyboardInputViewController.swift in Sources */,
