@@ -66,6 +66,20 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		FD50E67319BE1698000B1A14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD50E66E19BE1698000B1A14 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
+			remoteInfo = Alamofire;
+		};
+		FD50E67519BE1698000B1A14 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FD50E66E19BE1698000B1A14 /* Alamofire.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
+			remoteInfo = AlamofireTests;
+		};
 		FDFF61C81994BEFD005CAC28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FDFF61A81994BEFD005CAC28 /* Project object */;
@@ -79,6 +93,7 @@
 		FD2B6256199CBE2900C1FC2F /* FlightViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightViewController.swift; sourceTree = "<group>"; };
 		FD377E4F19993AC700CEEAFD /* Airport.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Airport.swift; sourceTree = "<group>"; };
 		FD3D5C67199950EF00DEADBC /* Region.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Region.swift; sourceTree = "<group>"; };
+		FD50E66E19BE1698000B1A14 /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
@@ -154,6 +169,15 @@
 				FDF6AF9219AA492400AC4F7A /* User.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		FD50E66F19BE1698000B1A14 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FD50E67419BE1698000B1A14 /* Alamofire.framework */,
+				FD50E67619BE1698000B1A14 /* AlamofireTests.xctest */,
+			);
+			name = Products;
 			sourceTree = "<group>";
 		};
 		FD650CCD1994E1F600E255B0 /* Integration Tests */ = {
@@ -246,6 +270,7 @@
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
+				FD50E66E19BE1698000B1A14 /* Alamofire.xcodeproj */,
 				FDB0509619B5F32B00EA10AA /* Security.framework */,
 				FDF6AFF719AB835000AC4F7A /* UIKit.framework */,
 				FDF6AFB019AB10A600AC4F7A /* Localizable.strings */,
@@ -378,6 +403,12 @@
 			mainGroup = FDFF61A71994BEFD005CAC28;
 			productRefGroup = FDFF61B11994BEFD005CAC28 /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = FD50E66F19BE1698000B1A14 /* Products */;
+					ProjectRef = FD50E66E19BE1698000B1A14 /* Alamofire.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				FDFF61AF1994BEFD005CAC28 /* flugwecker */,
@@ -385,6 +416,23 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		FD50E67419BE1698000B1A14 /* Alamofire.framework */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.framework;
+			path = Alamofire.framework;
+			remoteRef = FD50E67319BE1698000B1A14 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		FD50E67619BE1698000B1A14 /* AlamofireTests.xctest */ = {
+			isa = PBXReferenceProxy;
+			fileType = wrapper.cfbundle;
+			path = AlamofireTests.xctest;
+			remoteRef = FD50E67519BE1698000B1A14 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FDFF61AE1994BEFD005CAC28 /* Resources */ = {

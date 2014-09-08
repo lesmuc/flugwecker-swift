@@ -7,3 +7,7 @@
 [submodule "SwiftyJSON"]
 	path = SwiftyJSON
 	url = https://github.com/lingoer/SwiftyJSON
+[submodule "Alamofire"]
+	path = Alamofire
+	url = https://github.com/lesmuc/Alamofire
+	branch = master
