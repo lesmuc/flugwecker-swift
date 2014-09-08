@@ -8,7 +8,7 @@
 
 import UIKit
 
-class KeyboardInputViewController: UIViewController {
+class KeyboardInputViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var viewBottomLayoutGuideConstraint: NSLayoutConstraint!
     @IBOutlet weak var viewTopLayoutGuideConstraint: NSLayoutConstraint!
@@ -20,18 +20,22 @@ class KeyboardInputViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         
-        // Listen for changes to keyboard visibility so that we can adjust the text view accordingly.
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        if (self.viewContainerContent != nil) {
+            // Listen for changes to keyboard visibility so that we can adjust the text view accordingly.
+            let notificationCenter = NSNotificationCenter.defaultCenter()
+            notificationCenter.addObserver(self, selector: "handleKeyboardWillShowNotification:", name: UIKeyboardWillShowNotification, object: nil)
+            notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
+        }
     }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
         
-        let notificationCenter = NSNotificationCenter.defaultCenter()
-        notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
-        notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        if (self.viewContainerContent != nil) {
+            let notificationCenter = NSNotificationCenter.defaultCenter()
+            notificationCenter.removeObserver(self, name: UIKeyboardWillShowNotification, object: nil)
+            notificationCenter.removeObserver(self, name: UIKeyboardWillHideNotification, object: nil)
+        }
     }
     
     // MARK: UITextFieldDelegate

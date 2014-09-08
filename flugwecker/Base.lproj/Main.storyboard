@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6206.9" systemVersion="13E28" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="bmU-YA-1Zv">
     <dependencies>
-        <deployment defaultVersion="1792" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7026.1"/>
         <capability name="Constraints with attributes relative to the layout margin" minToolsVersion="6.0"/>
     </dependencies>
@@ -454,10 +453,10 @@
             </objects>
             <point key="canvasLocation" x="610" y="121"/>
         </scene>
-        <!--Anmelden-->
+        <!--Signup-->
         <scene sceneID="j8c-HQ-RXa">
             <objects>
-                <viewController title="Anmelden" id="bF9-V9-7hr" customClass="SignupViewController" customModule="flugwecker" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Signup" id="bF9-V9-7hr" customClass="SignupViewController" customModule="flugwecker" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Z9P-bv-IHU"/>
                         <viewControllerLayoutGuide type="bottom" id="V6X-QI-GSu"/>
@@ -507,21 +506,29 @@
                                     <action selector="facebookButtonAction:" destination="bF9-V9-7hr" eventType="touchUpInside" id="5gO-YF-bSo"/>
                                 </connections>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="unknown" translatesAutoresizingMaskIntoConstraints="NO" id="KKD-yA-jnG">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B3l-lW-1ec">
                                 <rect key="frame" x="243" y="72" width="115" height="115"/>
+                                <color key="backgroundColor" red="0.62745100259999997" green="0.62745100259999997" blue="0.62745100259999997" alpha="1" colorSpace="deviceRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="115" id="PVp-dN-WMO"/>
-                                    <constraint firstAttribute="width" constant="115" id="l2G-Ij-noI"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="115" id="JNI-Kz-MVe"/>
+                                    <constraint firstAttribute="height" constant="115" id="K1H-L9-7qb"/>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="115" id="j2r-EF-YCb"/>
+                                    <constraint firstAttribute="width" constant="115" id="xZv-bl-slS"/>
                                 </constraints>
-                            </imageView>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" backgroundImage="unknown"/>
+                                <connections>
+                                    <action selector="takePictureAction:" destination="bF9-V9-7hr" eventType="touchUpInside" id="VNT-Ja-syN"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ryB-c9-6Ow" firstAttribute="top" secondItem="Z9P-bv-IHU" secondAttribute="bottom" constant="131" id="4q2-Bq-T2d"/>
                             <constraint firstItem="ryB-c9-6Ow" firstAttribute="top" secondItem="Z9P-bv-IHU" secondAttribute="bottom" constant="131" id="O4h-PF-zK5"/>
-                            <constraint firstAttribute="centerX" secondItem="KKD-yA-jnG" secondAttribute="centerX" id="Y3X-K3-3pM"/>
-                            <constraint firstItem="KKD-yA-jnG" firstAttribute="top" secondItem="Z9P-bv-IHU" secondAttribute="bottom" constant="8" id="ic0-hI-bc9"/>
+                            <constraint firstItem="B3l-lW-1ec" firstAttribute="top" secondItem="Z9P-bv-IHU" secondAttribute="bottom" constant="8" id="Qwt-tu-zgD"/>
                             <constraint firstAttribute="centerX" secondItem="3j9-lO-j3r" secondAttribute="centerX" id="mQ0-QI-0Zd"/>
+                            <constraint firstAttribute="centerX" secondItem="B3l-lW-1ec" secondAttribute="centerX" id="nbo-I5-rDI"/>
                             <constraint firstAttribute="centerX" secondItem="4mD-sw-ewx" secondAttribute="centerX" id="ppj-CW-SRG"/>
                             <constraint firstAttribute="centerX" secondItem="ryB-c9-6Ow" secondAttribute="centerX" id="qQx-mg-YRw"/>
                             <constraint firstItem="4mD-sw-ewx" firstAttribute="top" secondItem="Z9P-bv-IHU" secondAttribute="bottom" constant="169" id="sLS-2R-MWA"/>
@@ -530,6 +537,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Wvy-rx-XDp"/>
                     <connections>
+                        <outlet property="buttonTakePicture" destination="B3l-lW-1ec" id="pue-5g-cPq"/>
                         <outlet property="facebookButton" destination="3j9-lO-j3r" id="WQD-BU-8Fc"/>
                         <outlet property="loginButton" destination="ryB-c9-6Ow" id="3EZ-5Z-m47"/>
                         <outlet property="registerButton" destination="4mD-sw-ewx" id="NNj-k5-ahJ"/>

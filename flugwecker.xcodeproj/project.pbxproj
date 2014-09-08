@@ -56,6 +56,8 @@
 		FDF86227199BBB6100B1D104 /* FlightConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86225199BBB6100B1D104 /* FlightConnection.swift */; };
 		FDF86229199BBB6900B1D104 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86228199BBB6900B1D104 /* Flight.swift */; };
 		FDF8622A199BBB6900B1D104 /* Flight.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDF86228199BBB6900B1D104 /* Flight.swift */; };
+		FDFAE49519BB080400A2BDE0 /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAE49419BB080400A2BDE0 /* ImageUploadViewController.swift */; };
+		FDFAE49619BB080400A2BDE0 /* ImageUploadViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFAE49419BB080400A2BDE0 /* ImageUploadViewController.swift */; };
 		FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */; };
 		FDFF61BB1994BEFD005CAC28 /* AirportViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */; };
 		FDFF61C01994BEFD005CAC28 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FDFF61BE1994BEFD005CAC28 /* Main.storyboard */; };
@@ -64,27 +66,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		FD88009519B72CFB001F011E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD88009019B72CFB001F011E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3319A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
-		FD88009719B72CFB001F011E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD88009019B72CFB001F011E /* Alamofire.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = F8111E3E19A95C8B0040E7D1;
-			remoteInfo = AlamofireTests;
-		};
-		FD88009919B72D05001F011E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = FD88009019B72CFB001F011E /* Alamofire.xcodeproj */;
-			proxyType = 1;
-			remoteGlobalIDString = F8111E3219A95C8B0040E7D1;
-			remoteInfo = Alamofire;
-		};
 		FDFF61C81994BEFD005CAC28 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = FDFF61A81994BEFD005CAC28 /* Project object */;
@@ -101,7 +82,6 @@
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
-		FD88009019B72CFB001F011E /* Alamofire.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Alamofire.xcodeproj; path = Alamofire/Alamofire.xcodeproj; sourceTree = "<group>"; };
 		FD8FB01719B98CBF00D4965B /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyJSON.h; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.h; sourceTree = SOURCE_ROOT; };
 		FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		FDB0509619B5F32B00EA10AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -128,6 +108,7 @@
 		FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightConnectionViewController.swift; sourceTree = "<group>"; };
 		FDF86225199BBB6100B1D104 /* FlightConnection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlightConnection.swift; sourceTree = "<group>"; };
 		FDF86228199BBB6900B1D104 /* Flight.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Flight.swift; sourceTree = "<group>"; };
+		FDFAE49419BB080400A2BDE0 /* ImageUploadViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageUploadViewController.swift; sourceTree = "<group>"; };
 		FDFF61B01994BEFD005CAC28 /* flugwecker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = flugwecker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FDFF61B41994BEFD005CAC28 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FDFF61B51994BEFD005CAC28 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -195,13 +176,13 @@
 		FD7068481998EE5700FEA65B /* View Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FDFAE49319BB07B700A2BDE0 /* Base Classes */,
 				FDF6AF7319AA465E00AC4F7A /* User */,
 				FDFF61BA1994BEFD005CAC28 /* AirportViewController.swift */,
 				FDC2A3C0199914FA0044CF55 /* RegionViewController.swift */,
 				FDF86222199BBB3700B1D104 /* FlightConnectionViewController.swift */,
 				FD2B6256199CBE2900C1FC2F /* FlightViewController.swift */,
 				FDF6AF6919AA2BDD00AC4F7A /* TripViewController.swift */,
-				FDB0509F19B6E6D900EA10AA /* KeyboardInputViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -214,15 +195,6 @@
 				FDF6AFEF19AB7B6400AC4F7A /* MBProgressHUD */,
 			);
 			name = Externals;
-			sourceTree = "<group>";
-		};
-		FD88009119B72CFB001F011E /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				FD88009619B72CFB001F011E /* Alamofire.framework */,
-				FD88009819B72CFB001F011E /* AlamofireTests.xctest */,
-			);
-			name = Products;
 			sourceTree = "<group>";
 		};
 		FDF6AF7319AA465E00AC4F7A /* User */ = {
@@ -262,10 +234,18 @@
 			name = MBProgressHUD;
 			sourceTree = "<group>";
 		};
+		FDFAE49319BB07B700A2BDE0 /* Base Classes */ = {
+			isa = PBXGroup;
+			children = (
+				FDFAE49419BB080400A2BDE0 /* ImageUploadViewController.swift */,
+				FDB0509F19B6E6D900EA10AA /* KeyboardInputViewController.swift */,
+			);
+			name = "Base Classes";
+			sourceTree = "<group>";
+		};
 		FDFF61A71994BEFD005CAC28 = {
 			isa = PBXGroup;
 			children = (
-				FD88009019B72CFB001F011E /* Alamofire.xcodeproj */,
 				FDB0509619B5F32B00EA10AA /* Security.framework */,
 				FDF6AFF719AB835000AC4F7A /* UIKit.framework */,
 				FDF6AFB019AB10A600AC4F7A /* Localizable.strings */,
@@ -345,7 +325,6 @@
 			buildRules = (
 			);
 			dependencies = (
-				FD88009A19B72D05001F011E /* PBXTargetDependency */,
 			);
 			name = flugwecker;
 			productName = flugwecker;
@@ -399,12 +378,6 @@
 			mainGroup = FDFF61A71994BEFD005CAC28;
 			productRefGroup = FDFF61B11994BEFD005CAC28 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = FD88009119B72CFB001F011E /* Products */;
-					ProjectRef = FD88009019B72CFB001F011E /* Alamofire.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				FDFF61AF1994BEFD005CAC28 /* flugwecker */,
@@ -412,23 +385,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		FD88009619B72CFB001F011E /* Alamofire.framework */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.framework;
-			path = Alamofire.framework;
-			remoteRef = FD88009519B72CFB001F011E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		FD88009819B72CFB001F011E /* AlamofireTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AlamofireTests.xctest;
-			remoteRef = FD88009719B72CFB001F011E /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		FDFF61AE1994BEFD005CAC28 /* Resources */ = {
@@ -465,6 +421,7 @@
 				FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */,
 				FDF6AF9F19AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
 				FD8FB01919B98CBF00D4965B /* SwiftyJSON.swift in Sources */,
+				FDFAE49519BB080400A2BDE0 /* ImageUploadViewController.swift in Sources */,
 				FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDF6AF6D19AA2D7A00AC4F7A /* Trip.swift in Sources */,
 				FD3D5C68199950EF00DEADBC /* Region.swift in Sources */,
@@ -506,6 +463,7 @@
 				FDF6AF9D19AB030F00AC4F7A /* RegisterViewController.swift in Sources */,
 				FDF86224199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDFF61CE1994BEFD005CAC28 /* flugweckerTests.swift in Sources */,
+				FDFAE49619BB080400A2BDE0 /* ImageUploadViewController.swift in Sources */,
 				FDF86227199BBB6100B1D104 /* FlightConnection.swift in Sources */,
 				FDF6AFFB19ABA8A800AC4F7A /* VEResizeImage.swift in Sources */,
 			);
@@ -514,11 +472,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		FD88009A19B72D05001F011E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = Alamofire;
-			targetProxy = FD88009919B72D05001F011E /* PBXContainerItemProxy */;
-		};
 		FDFF61C91994BEFD005CAC28 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = FDFF61AF1994BEFD005CAC28 /* flugwecker */;
@@ -629,7 +582,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = flugwecker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugwecker-Bridging-Header.h";
@@ -650,7 +603,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = flugwecker/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "flugwecker/flugwecker-Bridging-Header.h";

@@ -9,18 +9,14 @@
 import UIKit
 import Alamofire
 
-class RegisterViewController: KeyboardInputViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UIActionSheetDelegate, UITextFieldDelegate {
+class RegisterViewController: ImageUploadViewController {
     
-    @IBOutlet weak var buttonTakePicture: UIButton!
-
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField1: UITextField!
     @IBOutlet weak var passwordTextField2: UITextField!
 
     @IBOutlet weak var registerButton: UIButton!
-    
-    var selectedImage: UIImage!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,42 +37,6 @@ class RegisterViewController: KeyboardInputViewController, UIImagePickerControll
             self.passwordTextField1.text = "123456"
             self.passwordTextField2.text = self.passwordTextField1.text
         }
-    }
-    
-    func actionSheet(myActionSheet: UIActionSheet!, clickedButtonAtIndex buttonIndex: Int){
-
-        var imagePicker:UIImagePickerController = UIImagePickerController()
-        
-        if buttonIndex == 0 { // camera
-            
-            if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
-                imagePicker.sourceType = UIImagePickerControllerSourceType.Camera
-            } else {
-                imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-            }
-            
-        } else if buttonIndex == 1 {
-            imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-        }
-        
-        imagePicker.delegate = self
-        imagePicker.allowsEditing = true
-        
-        self.presentViewController(imagePicker, animated: true, completion: nil)
-    }
-    
-    func imagePickerController(picker: UIImagePickerController!, didFinishPickingMediaWithInfo info: [NSObject : AnyObject]!) {
-        
-        self.selectedImage = info[UIImagePickerControllerEditedImage] as UIImage!
-        
-        if self.selectedImage == nil {
-            self.selectedImage = info[UIImagePickerControllerOriginalImage] as UIImage!
-        }
-        
-        var cropped:UIImage = VEResizeImage(self.selectedImage, CGSizeMake(self.buttonTakePicture.frame.size.width, self.buttonTakePicture.frame.size.height))
-        self.buttonTakePicture.setImage(cropped, forState: UIControlState.Normal)
-
-        picker.dismissViewControllerAnimated(true, completion: nil)
     }
     
     @IBAction func doRegister(sender: UIButton) {
@@ -106,6 +66,23 @@ class RegisterViewController: KeyboardInputViewController, UIImagePickerControll
             if statusCode == 201 { // Created Successfully
                 
                 KeychainService.saveUserJSON(json.description)
+                
+                // Upload Image
+                if self.selectedImage != nil {
+                    MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                    
+                    let imageData:NSData = UIImageJPEGRepresentation(self.selectedImage, 0.75);
+
+                    Alamofire.upload(.PUT, "\(API_URL)/api/user", imageData).response {request, response, data, error in
+                        let statusCode = response?.statusCode as Int!
+                        
+                        if (statusCode == 200) {
+                            
+                        } else {
+                            self.checkAndDisplayErrors(statusCode, jsonError:json)
+                        }
+                    }
+                }
                     
                 self.navigationController?.popViewControllerAnimated(true);
                 
@@ -116,19 +93,6 @@ class RegisterViewController: KeyboardInputViewController, UIImagePickerControll
             }
         }
     }
-    
-    @IBAction func takePictureAction(sender: UIButton) {
-        
-        let title = NSLocalizedString("Where?", comment: "")
-        let cancelButtonTitle = NSLocalizedString("Cancel", comment: "")
-        let cameraButtonTitle = NSLocalizedString("Camera", comment: "")
-        let photoLibraryButtonTitle = NSLocalizedString("Photo Library", comment: "")
-        
-        var popupQuery:UIActionSheet = UIActionSheet(title: title, delegate: self, cancelButtonTitle: cancelButtonTitle, destructiveButtonTitle: nil, otherButtonTitles: cameraButtonTitle, photoLibraryButtonTitle)
-        popupQuery.actionSheetStyle = UIActionSheetStyle.BlackOpaque
-        popupQuery.showInView(self.view)
-    }
-    
     
     func isValidForm() -> Bool {
         

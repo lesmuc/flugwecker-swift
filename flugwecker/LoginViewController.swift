@@ -12,7 +12,6 @@ import Alamofire
 class LoginViewController: KeyboardInputViewController {
     
     @IBOutlet weak var loginButton: UIButton!
-    
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -56,7 +55,7 @@ class LoginViewController: KeyboardInputViewController {
         Manager.sharedInstance.defaultHeaders["Authorization"] = "Basic " + base64String!
         
         Alamofire
-            .request(.POST, "\(API_URL)/api/user?XDEBUG_SESSION_START")
+            .request(.POST, "\(API_URL)/api/user")
             .response {request, response, data, error in
             
             var json = JSONValue(data as NSData!)

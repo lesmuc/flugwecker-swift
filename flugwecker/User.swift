@@ -9,14 +9,14 @@
 import Foundation
 
 struct User {
-    var id : String!
+    var id : Int!
     var username : String!
     var email : String!
     var password : String!
     
     static func decode(json: JSONValue) -> User {
         
-        var id = json["user_id"].string as String!
+        var id = json["user_id"].number as Int!
         var username = json["username"].string as String!
         var email = json["email"].string as String!
         var password = json["password"].string as String!
