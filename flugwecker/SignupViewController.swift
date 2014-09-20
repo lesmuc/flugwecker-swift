@@ -54,6 +54,8 @@ class SignupViewController: ImageUploadViewController {
         // upload image
         if self.selectedImage != nil {
             
+            /*
+            // TODO: Multipart is not supported by Alomofire yet.
             if UserService.isUserLoggedIn() == true {
                 
                 var jsonUserString:String = KeychainService.loadUserJSON()
@@ -95,8 +97,8 @@ class SignupViewController: ImageUploadViewController {
                         self.checkAndDisplayErrors(statusCode, jsonError:json)
                     }
                 }
-                
             }
+            */
         }
     }
     

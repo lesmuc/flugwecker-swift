@@ -67,7 +67,8 @@ class RegisterViewController: ImageUploadViewController {
                 
                 KeychainService.saveUserJSON(json.description)
                 
-                // Upload Image
+                /*
+                // TODO: Multipart is not supported by Alomofire yet.
                 if self.selectedImage != nil {
                     MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                     
@@ -83,6 +84,7 @@ class RegisterViewController: ImageUploadViewController {
                         }
                     }
                 }
+                */
                     
                 self.navigationController?.popViewControllerAnimated(true);
                 

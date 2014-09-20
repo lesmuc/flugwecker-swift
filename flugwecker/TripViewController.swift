@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class TripViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -48,33 +49,50 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func loadItems() {
         
-        /*
-        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
-        
-        Alamofire.request(.GET, "\(API_URL)/airports-inside/de", parameters: nil).response {request, response, data, error in
+        if UserService.isUserLoggedIn() == true {
             
+            var jsonUserString:String = KeychainService.loadUserJSON()
+            
+            let data = (jsonUserString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
             let json = JSONValue(data as NSData!)
+            let user = User.decode(json)
             
-            if json["airports"] {
+            MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            
+            Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+            
+            println(user.email)
+            println(user.password)
+            
+            let plainString = "\(user.email):\(user.password)" as NSString
+            let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
+            let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
+            Manager.sharedInstance.defaultHeaders["Authorization"] = "Basic " + base64String!
+            
+            Alamofire.request(.GET, "\(API_URL)/api/trip?XDEBUG_SESSION_START", parameters: nil).response {request, response, data, error in
                 
-                self.items.removeAll(keepCapacity: true)
+                let json = JSONValue(data as NSData!)
                 
-                for jsonAirport in json["airports"].array!{
-                    let airport = Airport.decode(jsonAirport)
+                if json["trips"] {
                     
-                    if airport.counterFlights > 0 {
-                        self.items.append(airport)
+                    self.items.removeAll(keepCapacity: true)
+                    
+                    for jsonTrip in json["trips"].array!{
+                        let trip = Trip.decode(jsonTrip)
+                        
+                        self.items.append(trip)
                     }
                 }
-            }
-            
-            self.tableView.reloadData()
-            
-            if self.refreshControl.refreshing == true {
-                self.refreshControl.endRefreshing()
+                
+                self.tableView.reloadData()
+                
+                if self.refreshControl.refreshing == true {
+                    self.refreshControl.endRefreshing()
+                }
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
         }
-        */
     }
     
     // MARK: - Table View
@@ -84,7 +102,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("AirportIdentifier", forIndexPath: indexPath) as UITableViewCell
+        let cell = tableView.dequeueReusableCellWithIdentifier("TripIdentifier", forIndexPath: indexPath) as UITableViewCell
         
         let trip = self.items[indexPath.row]
         
