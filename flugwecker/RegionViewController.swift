@@ -36,7 +36,9 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         super.viewWillAppear(animated)
         
-        self.loadItems()
+        if self.items.count == 0 {
+            self.loadItems()
+        }
     }
     
     func refresh(sender:AnyObject) {

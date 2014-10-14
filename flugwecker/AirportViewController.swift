@@ -84,16 +84,6 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 println("Error: " + error.localizedDescription)
         });
-        
-        
-        
-        
-        Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
-        
-        Alamofire.request(.GET, "\(API_URL)/airports-inside/de", parameters: nil).response {request, response, data, error in
-            
-
-        }
     }
 
     // MARK: - Table View

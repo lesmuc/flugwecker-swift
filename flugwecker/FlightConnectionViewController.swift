@@ -36,7 +36,9 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
         
         self.title = self.selectedRegion.name;
         
-        self.loadItems()
+        if self.items.count == 0 {
+            self.loadItems()
+        }
     }
     
     func refresh(sender:AnyObject) {

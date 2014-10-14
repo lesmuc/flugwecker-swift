@@ -46,8 +46,8 @@ class RegisterViewController: ImageUploadViewController {
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        /*
-        Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
         
         let parameters = [
             "username": self.usernameTextField.text,
@@ -56,46 +56,82 @@ class RegisterViewController: ImageUploadViewController {
             "passwordVerify" : self.passwordTextField2.text,
         ]
         
-        Alamofire.request(.POST, "\(API_URL)/api/user", parameters: parameters).response {request, response, data, error in
-            
-            let json = JSONValue(data as NSData!)
-        
-            let statusCode = response?.statusCode as Int!
-        
-            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-        
-            if statusCode == 201 { // Created Successfully
+        manager.POST("\(API_URL)/api/user",
+            parameters: parameters,
+            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
                 
-                KeychainService.saveUserJSON(json.description)
+                let json = JSONValue(data as NSDictionary!)
                 
-                /*
-                // TODO: Multipart is not supported by Alomofire yet.
-                if self.selectedImage != nil {
-                    MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+                let statusCode = operation.response?.statusCode as Int!
+                
+                var user = User.decode(json)
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+                if statusCode == 201 && user.id > 0 { // Created Successfully
                     
-                    let imageData:NSData = UIImageJPEGRepresentation(self.selectedImage, 0.75);
-
-                    Alamofire.upload(.PUT, "\(API_URL)/api/user", imageData).response {request, response, data, error in
-                        let statusCode = response?.statusCode as Int!
+                    
+                    KeychainService.saveUserJSON(json.description)
+                    
+                    if self.selectedImage != nil {
+                        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
                         
-                        if (statusCode == 200) {
+                        let imageData = UIImageJPEGRepresentation(self.selectedImage, 0.75);
+                        
+                        if (imageData != nil) {
                             
-                        } else {
-                            self.checkAndDisplayErrors(statusCode, jsonError:json)
+                            let plainString = "\(self.emailTextField.text):\(self.passwordTextField1.text)" as NSString
+                            let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
+                            let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
+                            
+                            let requestSerializer = AFJSONRequestSerializer()
+                            requestSerializer.setValue("Basic " + base64String!, forHTTPHeaderField: "Authorization")
+                            
+                            manager.requestSerializer = requestSerializer
+                            
+                            manager.POST("\(API_URL)/api/user/\(user.id)", parameters: nil,
+                                constructingBodyWithBlock: { (data: AFMultipartFormData!) in
+                                    data.appendPartWithFileData(imageData, name: "image", fileName: "image.jpg", mimeType: "image/jpeg")
+                                },
+                                success: { operation, response in
+                                    
+                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                                    
+                                    println("[success] operation: \(operation), response: \(response)")
+                                    
+                                    let statusCode = operation.response?.statusCode as Int!
+                                    
+                                    if (statusCode == 200) {
+                                        self.navigationController?.popViewControllerAnimated(true);
+                                    } else {
+                                        self.checkAndDisplayErrors(statusCode, jsonError:json)
+                                    }
+                                    
+                                },
+                                failure: { operation, error in
+                                 
+                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                                    
+                                    println("[fail] operation: \(operation), error: \(error)")
+                                }
+                            )
                         }
+                    } else {
+                        self.navigationController?.popViewControllerAnimated(true);
                     }
-                }
-                */
                     
-                self.navigationController?.popViewControllerAnimated(true);
+                } else {
+                    self.checkAndDisplayErrors(statusCode, jsonError:json)
+                }
                 
-            } else {
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                
+                let json = JSONValue(operation.responseData as NSData!)
+                let statusCode = operation.response?.statusCode as Int!
                 
                 self.checkAndDisplayErrors(statusCode, jsonError:json)
-                
-            }
-        }
-        */
+        });
     }
     
     func isValidForm() -> Bool {
