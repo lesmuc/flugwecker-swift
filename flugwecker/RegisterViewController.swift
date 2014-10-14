@@ -46,6 +46,7 @@ class RegisterViewController: ImageUploadViewController {
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
+        /*
         Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         let parameters = [
@@ -94,6 +95,7 @@ class RegisterViewController: ImageUploadViewController {
                 
             }
         }
+        */
     }
     
     func isValidForm() -> Bool {

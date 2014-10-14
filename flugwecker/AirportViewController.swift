@@ -50,34 +50,49 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
+        
+        manager.GET("\(API_URL)/airports-inside/de",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
+                
+                let json = JSONValue(data as NSDictionary!)
+
+                if json["airports"] {
+                    
+                    self.items.removeAll(keepCapacity: true)
+                    
+                    for jsonAirport in json["airports"].array!{
+                        let airport = Airport.decode(jsonAirport)
+                        
+                        if airport.counterFlights > 0 {
+                            self.items.append(airport)
+                        }
+                    }
+                }
+                
+                self.tableView.reloadData()
+                
+                if self.refreshControl.refreshing == true {
+                    self.refreshControl.endRefreshing()
+                }
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+        });
+        
+        
+        
+        
         Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         Alamofire.request(.GET, "\(API_URL)/airports-inside/de", parameters: nil).response {request, response, data, error in
             
-            let json = JSONValue(data as NSData!)
-            
-            JSONValue(data as NSData!)
-            
-            if json["airports"] {
-                
-                self.items.removeAll(keepCapacity: true)
-                
-                for jsonAirport in json["airports"].array!{
-                    let airport = Airport.decode(jsonAirport)
-                    
-                    if airport.counterFlights > 0 {
-                        self.items.append(airport)
-                    }
-                }
-            }
-            
-            self.tableView.reloadData()
-            
-            if self.refreshControl.refreshing == true {
-                self.refreshControl.endRefreshing()
-            }
-            
-            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+
         }
     }
 

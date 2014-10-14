@@ -59,6 +59,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
             
+            /*
             Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
             
             println(user.email)
@@ -92,6 +93,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
                 
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             }
+            */
         }
     }
     

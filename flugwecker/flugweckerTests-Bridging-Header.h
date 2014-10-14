@@ -5,3 +5,5 @@
 #import <FacebookSDK/FacebookSDK.h>
 
 #import "MBProgressHUD.h"
+
+#import "AFNetworking.h"

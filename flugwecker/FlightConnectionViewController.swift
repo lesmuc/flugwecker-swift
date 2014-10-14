@@ -45,33 +45,40 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
     
     func loadItems() {
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)                
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
         
-        Alamofire.request(.GET, "\(API_URL)/flights-from-to-region/\(selectedAirport.id)/\(selectedRegion.id)", parameters: nil).response {request, response, data, error in
-            
-            let json = JSONValue(data as NSData!)
-            
-            if json["flightConnections"] {
+        manager.GET("\(API_URL)/flights-from-to-region/\(selectedAirport.id)/\(selectedRegion.id)",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
                 
-                self.items.removeAll(keepCapacity: true)
+                let json = JSONValue(data as NSDictionary!)
                 
-                for jsonFlightConnection in json["flightConnections"].array!{
-                    let flightConnection = FlightConnection.decode(jsonFlightConnection)
+                if json["flightConnections"] {
                     
-                    self.items.append(flightConnection)
+                    self.items.removeAll(keepCapacity: true)
+                    
+                    for jsonFlightConnection in json["flightConnections"].array!{
+                        let flightConnection = FlightConnection.decode(jsonFlightConnection)
+                        
+                        self.items.append(flightConnection)
+                    }
                 }
-            }
-            
-            self.tableView.reloadData()
-            
-            if self.refreshControl.refreshing == true {
-                self.refreshControl.endRefreshing()
-            }
-            
-            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)            
-        }
+                
+                self.tableView.reloadData()
+                
+                if self.refreshControl.refreshing == true {
+                    self.refreshControl.endRefreshing()
+                }
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+        });
     }
     
     // MARK: - Table View

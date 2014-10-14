@@ -45,35 +45,40 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func loadItems() {
         
-        MBProgressHUD.showHUDAddedTo(self.view, animated: true)        
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        Alamofire.Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
+        let manager = AFHTTPRequestOperationManager()
+        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
         
-        let origin:String = selectedAirport.id
-        
-        Alamofire.request(.GET, "\(API_URL)/regions-from/\(selectedAirport.id)", parameters: nil).response {request, response, data, error in
-            
-            let json = JSONValue(data as NSData!)
-            
-            if json["regions"] {
+        manager.GET("\(API_URL)/regions-from/\(selectedAirport.id)",
+            parameters: nil,
+            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
                 
-                self.items.removeAll(keepCapacity: true)
+                let json = JSONValue(data as NSDictionary!)
                 
-                for jsonRegion in json["regions"].array!{
-                    let region = Region.decode(jsonRegion)
+                if json["regions"] {
                     
-                    self.items.append(region)
+                    self.items.removeAll(keepCapacity: true)
+                    
+                    for jsonRegion in json["regions"].array!{
+                        let region = Region.decode(jsonRegion)
+                        
+                        self.items.append(region)
+                    }
                 }
-            }
-            
-            self.tableView.reloadData()
-            
-            if self.refreshControl.refreshing == true {
-                self.refreshControl.endRefreshing()
-            }
-            
-            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)            
-        }
+                
+                self.tableView.reloadData()
+                
+                if self.refreshControl.refreshing == true {
+                    self.refreshControl.endRefreshing()
+                }
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+            },
+            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                println("Error: " + error.localizedDescription)
+        });
     }
     
     // MARK: - Table View

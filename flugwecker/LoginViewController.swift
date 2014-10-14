@@ -42,6 +42,7 @@ class LoginViewController: KeyboardInputViewController {
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
+        /*
         Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
         
         let parameters = [
@@ -83,6 +84,7 @@ class LoginViewController: KeyboardInputViewController {
                 
             }
         }
+*/
     }
     
 }
