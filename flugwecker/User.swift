@@ -14,14 +14,18 @@ struct User {
     var email : String!
     var password : String!
     
-    static func decode(json: JSONValue) -> User {
+    static func decode(json: JSON) -> User {
         
-        var id = json["user_id"].number as Int!
-        var username = json["username"].string as String!
-        var email = json["email"].string as String!
-        var password = json["password"].string as String!
+        var id = json["user_id"].numberValue as Int!
+        var username = json["username"].stringValue as String!
+        var email = json["email"].stringValue as String!
+        var password = json["password"].stringValue as String!
         
         return User(id: id, username: username, email: email, password: password);
+    }
+    
+    static func encode(user: User) -> JSON {
+        return JSON(user.toDictionary())
     }
     
     func toDictionary() -> NSMutableDictionary {

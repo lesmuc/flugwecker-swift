@@ -31,8 +31,8 @@
 		FD4943BB19ED13660075C1CE /* AFURLResponseSerialization.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4943A919ED13660075C1CE /* AFURLResponseSerialization.m */; };
 		FD4943BC19ED13660075C1CE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4943AB19ED13660075C1CE /* AFURLSessionManager.m */; };
 		FD4943BD19ED13660075C1CE /* AFURLSessionManager.m in Sources */ = {isa = PBXBuildFile; fileRef = FD4943AB19ED13660075C1CE /* AFURLSessionManager.m */; };
-		FD8FB01919B98CBF00D4965B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */; };
-		FD8FB01A19B98CBF00D4965B /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */; };
+		FD9D4ED319EE75BC0043C7A5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D4ED219EE75BC0043C7A5 /* SwiftyJSON.swift */; };
+		FD9D4ED419EE75BC0043C7A5 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD9D4ED219EE75BC0043C7A5 /* SwiftyJSON.swift */; };
 		FDB0509719B5F32B00EA10AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB0509619B5F32B00EA10AA /* Security.framework */; };
 		FDB0509819B5F33900EA10AA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB0509619B5F32B00EA10AA /* Security.framework */; };
 		FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FDB0509919B5F5FA00EA10AA /* KeychainService.swift */; };
@@ -119,8 +119,8 @@
 		FD650CC61994E1AF00E255B0 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		FD650CCF1994E1F600E255B0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FD650CD01994E1F600E255B0 /* Integration_Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Integration_Tests.swift; sourceTree = "<group>"; };
-		FD8FB01719B98CBF00D4965B /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyJSON.h; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.h; sourceTree = SOURCE_ROOT; };
-		FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = SwiftyJSON/SwiftyJSON/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
+		FD9D4ED119EE75BC0043C7A5 /* SwiftyJSON.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SwiftyJSON.h; path = Swifty/Source/SwiftyJSON.h; sourceTree = SOURCE_ROOT; };
+		FD9D4ED219EE75BC0043C7A5 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SwiftyJSON.swift; path = Swifty/Source/SwiftyJSON.swift; sourceTree = SOURCE_ROOT; };
 		FDB0509619B5F32B00EA10AA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		FDB0509919B5F5FA00EA10AA /* KeychainService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeychainService.swift; sourceTree = "<group>"; };
 		FDB0509F19B6E6D900EA10AA /* KeyboardInputViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardInputViewController.swift; sourceTree = "<group>"; };
@@ -196,6 +196,8 @@
 		FD49438D19ECF1F70075C1CE /* SwiftyJSON */ = {
 			isa = PBXGroup;
 			children = (
+				FD9D4ED119EE75BC0043C7A5 /* SwiftyJSON.h */,
+				FD9D4ED219EE75BC0043C7A5 /* SwiftyJSON.swift */,
 			);
 			name = SwiftyJSON;
 			sourceTree = "<group>";
@@ -262,8 +264,6 @@
 			children = (
 				FD49439819ED13590075C1CE /* AFNetworking */,
 				FD49438D19ECF1F70075C1CE /* SwiftyJSON */,
-				FD8FB01719B98CBF00D4965B /* SwiftyJSON.h */,
-				FD8FB01819B98CBF00D4965B /* SwiftyJSON.swift */,
 				FDF6AFEF19AB7B6400AC4F7A /* MBProgressHUD */,
 			);
 			name = Externals;
@@ -487,6 +487,7 @@
 				FD4943AC19ED13660075C1CE /* AFHTTPRequestOperation.m in Sources */,
 				FDC2A3C1199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDFF61B61994BEFD005CAC28 /* AppDelegate.swift in Sources */,
+				FD9D4ED319EE75BC0043C7A5 /* SwiftyJSON.swift in Sources */,
 				FD4943BA19ED13660075C1CE /* AFURLResponseSerialization.m in Sources */,
 				FDF86229199BBB6900B1D104 /* Flight.swift in Sources */,
 				FD2B6257199CBE2900C1FC2F /* FlightViewController.swift in Sources */,
@@ -496,7 +497,6 @@
 				FD4943AE19ED13660075C1CE /* AFHTTPRequestOperationManager.m in Sources */,
 				FDB0509A19B5F5FA00EA10AA /* KeychainService.swift in Sources */,
 				FDF6AF9F19AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
-				FD8FB01919B98CBF00D4965B /* SwiftyJSON.swift in Sources */,
 				FDFAE49519BB080400A2BDE0 /* ImageUploadViewController.swift in Sources */,
 				FDF86223199BBB3700B1D104 /* FlightConnectionViewController.swift in Sources */,
 				FDF6AF6D19AA2D7A00AC4F7A /* Trip.swift in Sources */,
@@ -528,7 +528,6 @@
 				FDF6AF6E19AA2D7A00AC4F7A /* Trip.swift in Sources */,
 				FDCCD8FF19ACD4D6003D27CD /* Constants.swift in Sources */,
 				FDF8622A199BBB6900B1D104 /* Flight.swift in Sources */,
-				FD8FB01A19B98CBF00D4965B /* SwiftyJSON.swift in Sources */,
 				FD4943B719ED13660075C1CE /* AFURLConnectionOperation.m in Sources */,
 				FD377E5119993AC700CEEAFD /* Airport.swift in Sources */,
 				FDF6AF9A19AB030200AC4F7A /* LoginViewController.swift in Sources */,
@@ -536,6 +535,7 @@
 				FDF6AF9419AA492400AC4F7A /* User.swift in Sources */,
 				FDC2A3C2199914FA0044CF55 /* RegionViewController.swift in Sources */,
 				FDF6AFF319AB7B6C00AC4F7A /* MBProgressHUD.m in Sources */,
+				FD9D4ED419EE75BC0043C7A5 /* SwiftyJSON.swift in Sources */,
 				FD4943B319ED13660075C1CE /* AFNetworkReachabilityManager.m in Sources */,
 				FDF6AFA019AB031D00AC4F7A /* ProfileViewController.swift in Sources */,
 				FD3D5C69199950EF00DEADBC /* Region.swift in Sources */,

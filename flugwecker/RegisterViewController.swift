@@ -60,7 +60,7 @@ class RegisterViewController: ImageUploadViewController {
             parameters: parameters,
             success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
                 
-                let json = JSONValue(data as NSDictionary!)
+                var json = JSON(data as NSDictionary!)
                 
                 let statusCode = operation.response?.statusCode as Int!
                 
@@ -70,8 +70,11 @@ class RegisterViewController: ImageUploadViewController {
                 
                 if statusCode == 201 && user.id > 0 { // Created Successfully
                     
+                    user.password = self.passwordTextField1.text;
                     
-                    KeychainService.saveUserJSON(json.description)
+                    json = User.encode(user)
+                    
+                    KeychainService.saveUserJSON(json.rawJSONString)
                     
                     if self.selectedImage != nil {
                         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -80,18 +83,11 @@ class RegisterViewController: ImageUploadViewController {
                         
                         if (imageData != nil) {
                             
-                            let plainString = "\(self.emailTextField.text):\(self.passwordTextField1.text)" as NSString
-                            let plainData = plainString.dataUsingEncoding(NSUTF8StringEncoding)
-                            let base64String = plainData?.base64EncodedStringWithOptions(NSDataBase64EncodingOptions.fromRaw(0)!)
+                            manager.requestSerializer = UserService.getAuthentificationRequestSerializer()
                             
-                            let requestSerializer = AFJSONRequestSerializer()
-                            requestSerializer.setValue("Basic " + base64String!, forHTTPHeaderField: "Authorization")
-                            
-                            manager.requestSerializer = requestSerializer
-                            
-                            manager.POST("\(API_URL)/api/user/\(user.id)", parameters: nil,
+                            manager.POST("\(API_URL)/api/user/\(user.id)?XDEBUG_SESSION_START", parameters: nil,
                                 constructingBodyWithBlock: { (data: AFMultipartFormData!) in
-                                    data.appendPartWithFileData(imageData, name: "image", fileName: "image.jpg", mimeType: "image/jpeg")
+                                    data.appendPartWithFileData(imageData, name: "image", fileName: "\(user.id).jpg", mimeType: "image/jpeg")
                                 },
                                 success: { operation, response in
                                     
@@ -121,15 +117,19 @@ class RegisterViewController: ImageUploadViewController {
                     }
                     
                 } else {
+                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                     self.checkAndDisplayErrors(statusCode, jsonError:json)
                 }
                 
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 
-                let json = JSONValue(operation.responseData as NSData!)
+                let json = JSON(data: operation.responseData as NSData!)
                 let statusCode = operation.response?.statusCode as Int!
                 
+                println(json.description)
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 self.checkAndDisplayErrors(statusCode, jsonError:json)
         });
     }

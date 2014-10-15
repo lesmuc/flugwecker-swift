@@ -112,7 +112,7 @@ class SignupViewController: ImageUploadViewController {
             var jsonUserString:String = KeychainService.loadUserJSON()
             
             let data = (jsonUserString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-            let json = JSONValue(data as NSData!)
+            let json = JSON(data as NSData!)
             let user = User.decode(json)
             
             self.title = NSLocalizedString("Logout", comment: "")

@@ -13,11 +13,11 @@ struct Region {
     let name : String!
     let maxPrice : Double!
     
-    static func decode(json: JSONValue) -> Region {
+    static func decode(json: JSON) -> Region {
         
-        var id = json["code"].string as String!
-        var name = json["name"].string as String!
-        var maxPrice = json["maxprice"].double as Double!
+        var id = json["code"].stringValue as String!
+        var name = json["name"].stringValue as String!
+        var maxPrice = json["maxprice"].doubleValue as Double!
         
         return Region(id: id, name: name, maxPrice: maxPrice)
     }

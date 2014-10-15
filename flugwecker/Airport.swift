@@ -16,14 +16,14 @@ struct Airport {
     let city : String?
     let counterFlights : Int?
 
-    static func decode(json: JSONValue) -> Airport {
+    static func decode(json: JSON) -> Airport {
         
-        var id = json["id"].string as String!
-        var name = json["name"].string as String!
-        var image = json["image"].string as String!
+        var id = json["id"].stringValue as String!
+        var name = json["name"].stringValue as String!
+        var image = json["image"].stringValue as String!
         
-        var city = json["city"].string as String?
-        var counterFlights = json["counterFlights"].integer as Int?
+        var city = json["city"].stringValue as String?
+        var counterFlights = json["counterFlights"].intValue as Int?
         
         return Airport(id: id, name: name, image: image, city: city, counterFlights:counterFlights)
     }

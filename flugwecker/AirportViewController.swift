@@ -57,7 +57,7 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
                 
-                let json = JSONValue(data as NSDictionary!)
+                let json = JSON(data as NSDictionary!)
 
                 if json["airports"] {
                     

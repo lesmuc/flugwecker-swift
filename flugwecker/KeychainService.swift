@@ -10,9 +10,9 @@ import UIKit
 import Security
 
 // Identifiers
-let serviceIdentifier = "MySerivice"
+let serviceIdentifier = "MyService"
 let userAccount = "authenticatedUser"
-let accessGroup = "MySerivice"
+let accessGroup = "MyService"
 
 // Arguments for the keychain queries
 let kSecClassValue = kSecClass as NSString

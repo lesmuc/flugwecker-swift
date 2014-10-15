@@ -15,13 +15,13 @@ struct Flight {
     let url : String!
     let service : String!
     
-    static func decode(json: JSONValue) -> Flight {
+    static func decode(json: JSON) -> Flight {
         
-        var price = json["price"].double as Double!
-        var departureDate = json["departureDate"].string as String!
-        var returnDate = json["returnDate"].string as String!
-        var url = json["url"].string as String!
-        var service = json["service"].string as String!
+        var price = json["price"].doubleValue as Double!
+        var departureDate = json["departureDate"].stringValue as String!
+        var returnDate = json["returnDate"].stringValue as String!
+        var url = json["url"].stringValue as String!
+        var service = json["service"].stringValue as String!
         
         return Flight(price: price, departureDate: departureDate, returnDate: returnDate, url: url, service: service)
     }

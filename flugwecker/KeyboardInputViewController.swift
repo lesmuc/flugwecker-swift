@@ -109,7 +109,7 @@ class KeyboardInputViewController: UIViewController, UITextFieldDelegate {
         
     }
     
-    func checkAndDisplayErrors(statusCode:Int, jsonError:JSONValue) -> Bool {
+    func checkAndDisplayErrors(statusCode:Int, jsonError:JSON) -> Bool {
         
         let alertTitle = NSLocalizedString("Error", comment: "")
         let okayString = NSLocalizedString("OK", comment: "")
@@ -118,15 +118,15 @@ class KeyboardInputViewController: UIViewController, UITextFieldDelegate {
             
             var additionalFieldErrorMessages = Array<String>()
             
-            if var errors = jsonError["error"]["errors"].object as Dictionary<String, JSONValue>! {
+            if var errors = jsonError["error"]["errors"].dictionaryValue as Dictionary<String, JSON>! {
                 for (field, fieldErrors) in errors {
                     let localizedFieldTitle = NSLocalizedString(field, comment: "")
                     
-                    var dictionaryErrors = fieldErrors.object as Dictionary<String, JSONValue>!
+                    var dictionaryErrors = fieldErrors.dictionaryValue as Dictionary<String, JSON>!
                     
                     for (errorType, errorMessage) in dictionaryErrors {
                         
-                        let localizedErrorMessage = NSLocalizedString(errorMessage.string as String!, comment: "")
+                        let localizedErrorMessage = NSLocalizedString(errorMessage.stringValue as String!, comment: "")
                         
                         additionalFieldErrorMessages.append(localizedFieldTitle + ": " + localizedErrorMessage)
                     }

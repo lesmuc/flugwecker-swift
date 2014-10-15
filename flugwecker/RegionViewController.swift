@@ -56,13 +56,13 @@ class RegionViewController: UIViewController, UITableViewDelegate, UITableViewDa
             parameters: nil,
             success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
                 
-                let json = JSONValue(data as NSDictionary!)
+                let json = JSON(data as NSDictionary!)
                 
                 if json["regions"] {
                     
                     self.items.removeAll(keepCapacity: true)
                     
-                    for jsonRegion in json["regions"].array!{
+                    for jsonRegion in json["regions"].array! {
                         let region = Region.decode(jsonRegion)
                         
                         self.items.append(region)

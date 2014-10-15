@@ -15,12 +15,12 @@ struct FlightConnection {
     let flights : [Flight]
     let minPrice: Double!
     
-    static func decode(json: JSONValue) -> FlightConnection {
+    static func decode(json: JSON) -> FlightConnection {
         
-        var origin = Airport(id: json["origin"].string as String!, name: json["originName"].string as String!, image: json["originImage"].string as String!, city: nil, counterFlights: nil)
-        var destination = Airport(id: json["destination"].string as String!, name: json["destinationName"].string as String!, image: json["destinationImage"].string as String!, city: nil, counterFlights: nil)
+        var origin = Airport(id: json["origin"].stringValue as String!, name: json["originName"].stringValue as String!, image: json["originImage"].stringValue as String!, city: nil, counterFlights: nil)
+        var destination = Airport(id: json["destination"].stringValue as String!, name: json["destinationName"].stringValue as String!, image: json["destinationImage"].stringValue as String!, city: nil, counterFlights: nil)
         
-        var jsonFlightsArray = json["flights"].array as Array!
+        var jsonFlightsArray = json["flights"].arrayValue as Array!
         
         var flights = [Flight]()
         
@@ -29,16 +29,16 @@ struct FlightConnection {
         for jsonFlight in jsonFlightsArray {
             flights.append(
                 Flight(
-                    price: jsonFlight["price"].double as Double!,
-                    departureDate: jsonFlight["departureDate"].string as String!,
-                    returnDate: jsonFlight["returnDate"].string as String!,
-                    url: jsonFlight["url"].string as String!,
-                    service: jsonFlight["service"].string as String!
+                    price: jsonFlight["price"].doubleValue as Double!,
+                    departureDate: jsonFlight["departureDate"].stringValue as String!,
+                    returnDate: jsonFlight["returnDate"].stringValue as String!,
+                    url: jsonFlight["url"].stringValue as String!,
+                    service: jsonFlight["service"].stringValue as String!
                 )
             )
             
-            if (minPrice == 0.0 || minPrice > jsonFlight["price"].double as Double!) {
-                minPrice = jsonFlight["price"].double as Double!
+            if (minPrice == 0.0 || minPrice > jsonFlight["price"].doubleValue as Double!) {
+                minPrice = jsonFlight["price"].doubleValue as Double!
             }
         }
 

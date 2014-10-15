@@ -54,7 +54,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             var jsonUserString:String = KeychainService.loadUserJSON()
             
             let data = (jsonUserString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-            let json = JSONValue(data as NSData!)
+            let json = JSON(data: data as NSData!)
             let user = User.decode(json)
             
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)

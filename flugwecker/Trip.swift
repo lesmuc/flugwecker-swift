@@ -18,17 +18,17 @@ struct Trip {
     let destinations : [Airport]
     let regions : [Region]
 
-    static func decode(json: JSONValue) -> Trip {
+    static func decode(json: JSON) -> Trip {
         
-        var id = json["id"].string as String!
-        var startDate = json["startDate"].string as String!
-        var endDate = json["endDate"].string as String!
-        var name = json["name"].string as String!
-        var updatedAt = json["updatedAt"].string as String!
+        var id = json["id"].stringValue as String!
+        var startDate = json["startDate"].stringValue as String!
+        var endDate = json["endDate"].stringValue as String!
+        var name = json["name"].stringValue as String!
+        var updatedAt = json["updatedAt"].stringValue as String!
 
-        var jsonOriginsArray = json["origins"].array as Array!
-        var jsonDestinationsArray = json["destinations"].array as Array!
-        var jsonRegionsArray = json["regions"].array as Array!
+        var jsonOriginsArray = json["origins"].arrayValue as Array!
+        var jsonDestinationsArray = json["destinations"].arrayValue as Array!
+        var jsonRegionsArray = json["regions"].arrayValue as Array!
         
         var origins = [Airport]()
         var destinations = [Airport]()
@@ -37,11 +37,11 @@ struct Trip {
         for jsonOrigin in jsonOriginsArray {
             origins.append(
                 Airport(
-                    id: jsonOrigin["id"].string as String!,
-                    name: jsonOrigin["name"].string as String!,
-                    image: jsonOrigin["image"].string as String!,
-                    city: jsonOrigin["city"].string as String!,
-                    counterFlights: jsonOrigin["counterFlights"].integer as Int!
+                    id: jsonOrigin["id"].stringValue as String!,
+                    name: jsonOrigin["name"].stringValue as String!,
+                    image: jsonOrigin["image"].stringValue as String!,
+                    city: jsonOrigin["city"].stringValue as String!,
+                    counterFlights: jsonOrigin["counterFlights"].intValue as Int!
                 )
             )
         }
@@ -49,11 +49,11 @@ struct Trip {
         for jsonDestination in jsonDestinationsArray {
             destinations.append(
                 Airport(
-                    id: jsonDestination["id"].string as String!,
-                    name: jsonDestination["name"].string as String!,
-                    image: jsonDestination["image"].string as String!,
-                    city: jsonDestination["city"].string as String!,
-                    counterFlights: jsonDestination["counterFlights"].integer as Int!
+                    id: jsonDestination["id"].stringValue as String!,
+                    name: jsonDestination["name"].stringValue as String!,
+                    image: jsonDestination["image"].stringValue as String!,
+                    city: jsonDestination["city"].stringValue as String!,
+                    counterFlights: jsonDestination["counterFlights"].intValue as Int!
                 )
             )
         }
@@ -61,9 +61,9 @@ struct Trip {
         for jsonRegion in jsonRegionsArray {
             regions.append(
                 Region(
-                    id: jsonRegion["id"].string as String!,
-                    name: jsonRegion["name"].string as String!,
-                    maxPrice: jsonRegion["maxPrice"].double as Double!
+                    id: jsonRegion["id"].stringValue as String!,
+                    name: jsonRegion["name"].stringValue as String!,
+                    maxPrice: jsonRegion["maxPrice"].doubleValue as Double!
                 )
             )
         }
