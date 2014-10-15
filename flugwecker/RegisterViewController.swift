@@ -124,10 +124,8 @@ class RegisterViewController: ImageUploadViewController {
             },
             failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
                 
-                let json = JSON(data: operation.responseData as NSData!)
+                let json = JSON(data:operation.responseData as NSData)
                 let statusCode = operation.response?.statusCode as Int!
-                
-                println(json.description)
                 
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 self.checkAndDisplayErrors(statusCode, jsonError:json)
