@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class SignupViewController: ImageUploadViewController {
  
@@ -17,13 +16,37 @@ class SignupViewController: ImageUploadViewController {
     
     @IBOutlet weak var facebookButton: UIButton!
     
-    @IBOutlet weak var imageViewPicture: UIImageView!
+    @IBOutlet weak var twitterButton: UIButton!
     
     @IBAction func registerButtonAction(sender: AnyObject) {
+        
     }
     
     
     @IBAction func facebookButtonAction(sender: AnyObject) {
+
+        let permissions = ["user_about_me", "email"]
+        
+        PFFacebookUtils.logInWithPermissions(permissions, {
+            (user: PFUser!, error: NSError!) -> Void in
+            if user == nil {
+                NSLog("Uh oh. The user cancelled the Facebook login.")
+            } else if user.isNew {
+                
+                NSLog("User signed up and logged in through Facebook!")
+                self.buildGUI()
+                
+            } else {
+                
+                NSLog("User logged in through Facebook!")
+                self.buildGUI()
+                
+            }
+        })
+    }
+    
+    @IBAction func twitterButtonAction(sender: AnyObject) {
+        
     }
     
     func loginButtonAction(sender: AnyObject) {
@@ -34,10 +57,22 @@ class SignupViewController: ImageUploadViewController {
     }
     
     func logoutButtonAction(sender: AnyObject) {
-        KeychainService.deleteUserJSON()
+        
+        PFUser.logOut()
         
         self.buildGUI()
-        
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        if PFAnonymousUtils.isLinkedWithUser(PFUser.currentUser()) {
+            // Show the signup or login screen
+            self.title = NSLocalizedString("Login", comment: "")
+            
+        } else {
+            self.title = NSLocalizedString("Logout", comment: "")
+        }
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -107,28 +142,25 @@ class SignupViewController: ImageUploadViewController {
         self.facebookButton.setTitle(NSLocalizedString("Sign in via Facebook", comment: ""), forState:UIControlState.Normal)
         self.registerButton.setTitle(NSLocalizedString("Register", comment: ""), forState: UIControlState.Normal)
         
-        if UserService.isUserLoggedIn() == true {
-            
-            var jsonUserString:String = KeychainService.loadUserJSON()
-            
-            let data = (jsonUserString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
-            let json = JSON(data as NSData!)
-            let user = User.decode(json)
-            
-            self.title = NSLocalizedString("Logout", comment: "")
-            self.navigationItem.title = user.username
-            self.loginButton.setTitle(NSLocalizedString("Logout", comment: ""), forState: UIControlState.Normal)
-            self.registerButton.hidden = true
-            self.facebookButton.hidden = true
-            self.loginButton.addTarget(self, action: "logoutButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
-            
-        } else {
-            
+        self.loginButton.removeTarget(self, action: "", forControlEvents: UIControlEvents.TouchUpInside)
+        
+        if PFAnonymousUtils.isLinkedWithUser(PFUser.currentUser()) {
+            // Show the signup or login screen
             self.title = NSLocalizedString("Login", comment: "")
             self.loginButton.setTitle(NSLocalizedString("Login", comment: ""), forState: UIControlState.Normal)
             self.registerButton.hidden = false
             self.facebookButton.hidden = false
+            self.twitterButton.hidden = false
             self.loginButton.addTarget(self, action: "loginButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
+        } else {
+            // Do stuff with the user
+            self.title = NSLocalizedString("Logout", comment: "")
+            self.navigationItem.title = PFUser.currentUser().username
+            self.loginButton.setTitle(NSLocalizedString("Logout", comment: ""), forState: UIControlState.Normal)
+            self.registerButton.hidden = true
+            self.facebookButton.hidden = true
+            self.twitterButton.hidden = true
+            self.loginButton.addTarget(self, action: "logoutButtonAction:", forControlEvents: UIControlEvents.TouchUpInside)
         }
     }
 }

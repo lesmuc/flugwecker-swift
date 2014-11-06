@@ -7,12 +7,11 @@
 //
 
 import UIKit
-import Alamofire
 
 class LoginViewController: KeyboardInputViewController {
     
     @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
     override func viewDidLoad() {
@@ -34,7 +33,7 @@ class LoginViewController: KeyboardInputViewController {
         notificationCenter.addObserver(self, selector: "handleKeyboardWillHideNotification:", name: UIKeyboardWillHideNotification, object: nil)
         
         if UIDevice.currentDevice().model.rangeOfString("Simulator") != nil {
-            self.emailTextField.text = "udo@voneynern.de"
+            self.usernameTextField.text = "voneynern"
             self.passwordTextField.text = "123456"
         }
     }
@@ -43,49 +42,29 @@ class LoginViewController: KeyboardInputViewController {
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
-        manager.requestSerializer = UserService.getAuthentificationRequestSerializer(self.emailTextField.text, password: self.passwordTextField.text)
-        
-        manager.POST("\(API_URL)/api/user", parameters: nil,
+        PFUser.logInWithUsernameInBackground(self.usernameTextField.text, password:self.passwordTextField.text) {
+            (user: PFUser!, error: NSError!) -> Void in
             
-            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
+            MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
             
-                var json = JSON(data as NSDictionary!)
+            if user != nil {
+
+                self.navigationController?.popViewControllerAnimated(true);
                 
-                let statusCode = operation.response?.statusCode as Int!
+            } else {
                 
-                var user = User.decode(json)
+                let userInfo:Dictionary = error.userInfo!
+                let message:String = userInfo["error"] as String
                 
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                let alert = UIAlertView()
+                alert.title = NSLocalizedString(message, comment: "")
                 
-                if statusCode == 200 { // Logged in Successfully
-                    
-                    user.password = self.passwordTextField.text;
-                    
-                    json = User.encode(user)
-                    
-                    KeychainService.saveUserJSON(json.rawJSONString)
-                    
-                    self.navigationController?.popViewControllerAnimated(true);
-                    
-                } else {
-                    
-                    self.checkAndDisplayErrors(statusCode, jsonError:json)
-                    
-                }
-            
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
+                let okayString = NSLocalizedString("OK", comment: "")
                 
-                let json = JSON(data: operation.responseData as NSData!)
-                let statusCode = operation.response?.statusCode as Int!
-                
-                println(json.description)
-                
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                self.checkAndDisplayErrors(statusCode, jsonError:json)
-        })
+                alert.addButtonWithTitle(okayString)
+                alert.show()
+            }
+        }
     }
     
 }

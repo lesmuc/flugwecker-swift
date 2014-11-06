@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class RegisterViewController: ImageUploadViewController {
     
@@ -46,90 +45,30 @@ class RegisterViewController: ImageUploadViewController {
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
+        var user = PFUser()
+        user.username = self.usernameTextField.text
+        user.password = self.passwordTextField1.text
+        user.email = self.emailTextField.text
         
-        let parameters = [
-            "username": self.usernameTextField.text,
-            "email": self.emailTextField.text,
-            "password" : self.passwordTextField1.text,
-            "passwordVerify" : self.passwordTextField2.text,
-        ]
-        
-        manager.POST("\(API_URL)/api/user",
-            parameters: parameters,
-            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
+        user.signUpInBackgroundWithBlock {
+            (succeeded: Bool!, error: NSError!) -> Void in
+            if error == nil {
+                self.navigationController?.popViewControllerAnimated(true);
+            } else {
                 
-                var json = JSON(data as NSDictionary!)
+                let errorString:String = error.description
                 
-                let statusCode = operation.response?.statusCode as Int!
+                let message = NSLocalizedString("An unknown error has occurred.", comment: "") + " (\(errorString))"
                 
-                var user = User.decode(json)
+                let alert = UIAlertView()
+                alert.title = NSLocalizedString(message, comment: "")
                 
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                let okayString = NSLocalizedString("OK", comment: "")
                 
-                if statusCode == 201 && user.id > 0 { // Created Successfully
-                    
-                    user.password = self.passwordTextField1.text;
-                    
-                    json = User.encode(user)
-                    
-                    KeychainService.saveUserJSON(json.rawJSONString)
-                    
-                    if self.selectedImage != nil {
-                        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
-                        
-                        let imageData = UIImageJPEGRepresentation(self.selectedImage, 0.75);
-                        
-                        if (imageData != nil) {
-                            
-                            manager.requestSerializer = UserService.getAuthentificationRequestSerializer()
-                            
-                            manager.POST("\(API_URL)/api/user/\(user.id)?XDEBUG_SESSION_START", parameters: nil,
-                                constructingBodyWithBlock: { (data: AFMultipartFormData!) in
-                                    data.appendPartWithFileData(imageData, name: "image", fileName: "\(user.id).jpg", mimeType: "image/jpeg")
-                                },
-                                success: { operation, response in
-                                    
-                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                                    
-                                    println("[success] operation: \(operation), response: \(response)")
-                                    
-                                    let statusCode = operation.response?.statusCode as Int!
-                                    
-                                    if (statusCode == 200) {
-                                        self.navigationController?.popViewControllerAnimated(true);
-                                    } else {
-                                        self.checkAndDisplayErrors(statusCode, jsonError:json)
-                                    }
-                                    
-                                },
-                                failure: { operation, error in
-                                 
-                                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                                    
-                                    println("[fail] operation: \(operation), error: \(error)")
-                                }
-                            )
-                        }
-                    } else {
-                        self.navigationController?.popViewControllerAnimated(true);
-                    }
-                    
-                } else {
-                    MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                    self.checkAndDisplayErrors(statusCode, jsonError:json)
-                }
-                
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                
-                let json = JSON(data:operation.responseData as NSData)
-                let statusCode = operation.response?.statusCode as Int!
-                
-                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
-                self.checkAndDisplayErrors(statusCode, jsonError:json)
-        });
+                alert.addButtonWithTitle(okayString)
+                alert.show()
+            }
+        }
     }
     
     func isValidForm() -> Bool {

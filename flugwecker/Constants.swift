@@ -8,4 +8,4 @@
 
 import Foundation
 
-public let API_URL = "http://flugwecker.dev"
+public let API_URL = "http://www.flugwecker.de"

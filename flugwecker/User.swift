@@ -8,6 +8,19 @@
 
 import Foundation
 
+class User : PFObject, PFSubclassing {
+    
+    @NSManaged var id: Int
+    @NSManaged var username: String
+    @NSManaged var email: String
+    @NSManaged var password: String
+    
+    class func parseClassName() -> String! {
+        return "User"
+    }
+}
+
+/*
 struct User {
     var id : Int!
     var username : String!
@@ -51,3 +64,4 @@ struct User {
         return properties
     }
 }
+*/

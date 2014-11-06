@@ -8,6 +8,21 @@
 
 import Foundation
 
+class Trip : PFObject, PFSubclassing {
+    
+    @NSManaged var id: String
+    @NSManaged var startDate: String
+    @NSManaged var endDate: String
+    @NSManaged var name: String
+    @NSManaged var updated: String
+    
+    class func parseClassName() -> String! {
+        return "Trip"
+    }
+}
+
+/*
+
 struct Trip {
     let id : String!
     let startDate : String!
@@ -71,3 +86,4 @@ struct Trip {
         return Trip(id: id, startDate: startDate, endDate: endDate, name: name, updatedAt: updatedAt, origins: origins, destinations: destinations, regions: regions)
     }
 }
+*/

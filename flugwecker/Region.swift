@@ -8,17 +8,14 @@
 
 import Foundation
 
-struct Region {
-    let id : String!
-    let name : String!
-    let maxPrice : Double!
+class Region : PFObject, PFSubclassing {
     
-    static func decode(json: JSON) -> Region {
-        
-        var id = json["code"].stringValue as String!
-        var name = json["name"].stringValue as String!
-        var maxPrice = json["maxprice"].doubleValue as Double!
-        
-        return Region(id: id, name: name, maxPrice: maxPrice)
+    @NSManaged var id: String
+    @NSManaged var name: String
+    @NSManaged var airportsList: [Airport]
+    @NSManaged var counter: Int
+
+    class func parseClassName() -> String! {
+        return "Region"
     }
 }

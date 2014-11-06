@@ -7,17 +7,15 @@
 //
 
 import UIKit
-import Alamofire
 
 class FlightConnectionViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     var items = [FlightConnection]()
     
-    let headerImageWidth:CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 568.0 : 1024.0
-    let headerImageHeight:CGFloat = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 200.0 : 400.0
+    let headerImageWidth:Int = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 568 : 1024
+    let headerImageHeight:Int = UIDevice.currentDevice().userInterfaceIdiom == .Phone ? 200 : 400
     
     var selectedAirport: Airport!
-    var selectedRegion: Region!
     
     @IBOutlet var tableView : UITableView!
     
@@ -34,7 +32,7 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
         
         super.viewWillAppear(animated)
         
-        self.title = self.selectedRegion.name;
+        self.title = self.selectedAirport.name;
         
         if self.items.count == 0 {
             self.loadItems()
@@ -49,24 +47,20 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
+        var findFlightConnection:PFQuery = FlightConnection.query()
+        findFlightConnection.includeKey("origin")
+        findFlightConnection.includeKey("destination")
+        findFlightConnection.whereKey("origin", equalTo: self.selectedAirport)
+        findFlightConnection.whereKey("counter", greaterThan: 0)
+        findFlightConnection.orderByAscending("minPrice")
         
-        manager.GET("\(API_URL)/flights-from-to-region/\(selectedAirport.id)/\(selectedRegion.id)",
-            parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
+        findFlightConnection.findObjectsInBackgroundWithBlock { (objects:[AnyObject]!, error:NSError!) -> Void in
+            if !(error != nil) {
                 
-                let json = JSON(data as NSDictionary!)
+                self.items.removeAll(keepCapacity: true)
                 
-                if json["flightConnections"] {
-                    
-                    self.items.removeAll(keepCapacity: true)
-                    
-                    for jsonFlightConnection in json["flightConnections"].array!{
-                        let flightConnection = FlightConnection.decode(jsonFlightConnection)
-                        
-                        self.items.append(flightConnection)
-                    }
+                for flightConnection in objects as [FlightConnection] {
+                    self.items.append(flightConnection)
                 }
                 
                 self.tableView.reloadData()
@@ -76,11 +70,20 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
                 }
                 
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+            } else {
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                println("Error: " + error.localizedDescription)
-        });
+                let alertTitle = NSLocalizedString("Error", comment: "")
+                let okayString = NSLocalizedString("OK", comment: "")
+                
+                let alert = UIAlertView()
+                alert.title = alertTitle
+                alert.message = error.localizedDescription
+                
+                alert.addButtonWithTitle(okayString)
+                alert.show()
+            }
+        }
     }
     
     // MARK: - Table View
@@ -90,7 +93,7 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
     
     func tableView(tableView: UITableView!, heightForRowAtIndexPath indexPath: NSIndexPath!) -> CGFloat {
         if indexPath.row == 0 {
-            return self.headerImageHeight
+            return CGFloat(self.headerImageHeight)
         } else {
             return 44.0
         }
@@ -99,15 +102,18 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         if indexPath.row == 0 {
+            
             let cell = tableView.dequeueReusableCellWithIdentifier("CellHeader", forIndexPath: indexPath) as UITableViewCell
             
             let imageView = cell.viewWithTag(300) as UIImageView
             
             let flightConnection: FlightConnection = self.items[0]
             
-            let url = "\(API_URL)/image.php?src=img/airports/shutterstock_\(flightConnection.destination.image).jpg&w=\(self.headerImageWidth)&h=\(self.headerImageHeight)"
+            let url = "\(API_URL)/image.php?src=img/airports/shutterstock_\(self.selectedAirport.image).jpg&w=\(self.headerImageWidth)&h=\(self.headerImageHeight)"
             
-            var imageRequest: NSURLRequest = NSURLRequest(URL: NSURL(string: url))
+            println(url)
+            
+            var imageRequest: NSURLRequest = NSURLRequest(URL: NSURL(string: url)!)
             
             NSURLConnection.sendAsynchronousRequest(imageRequest,
                 queue: NSOperationQueue.mainQueue(),
@@ -122,7 +128,7 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
             
             let flightConnection: FlightConnection = self.items[indexPath.row-1]
             
-            cell.textLabel?.text = flightConnection.destination.name
+            cell.textLabel.text = flightConnection.destination.name
             
             cell.detailTextLabel?.text = "ab " + String(format:"%.0f", flightConnection.minPrice) + " €"
             
@@ -131,14 +137,13 @@ class FlightConnectionViewController: UIViewController, UITableViewDelegate, UIT
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
+
         let controller = segue.destinationViewController as FlightViewController
         
         var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
         
         let flightConnection = self.items[selectedIndexPathRow-1] as FlightConnection
         
-        controller.selectedAirport = selectedAirport
-        controller.selectedRegion = selectedRegion
         controller.selectedFlightConnection = flightConnection
     }
 }

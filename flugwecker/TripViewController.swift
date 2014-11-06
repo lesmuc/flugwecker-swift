@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class TripViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -25,12 +24,17 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
         
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Copperplate-Light", size: 20.0)]
+        let color = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
         
-        self.navigationController?.navigationBar.titleTextAttributes = titleDict
+        if let font = UIFont(name: "Copperplate-Light", size: 16.0) {
+            
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font,
+                NSForegroundColorAttributeName: UIColor.whiteColor()]
+        }
+        
         self.navigationController?.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
         
-        self.title = "Abflug"
+        self.title = NSLocalizedString("Trips", comment: "")
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -38,8 +42,15 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         super.viewWillAppear(animated)
         
         if self.items.count == 0 {
-            
             self.loadItems()
+        }
+        
+        var user = PFUser.currentUser()
+
+        if PFAnonymousUtils.isLinkedWithUser(PFUser.currentUser()) == false {
+            self.navigationItem.rightBarButtonItem?.enabled = true
+        } else {
+            self.navigationItem.rightBarButtonItem?.enabled = true
         }
     }
     
@@ -51,6 +62,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if UserService.isUserLoggedIn() == true {
             
+            /*
+            
             var jsonUserString:String = KeychainService.loadUserJSON()
             
             let data = (jsonUserString as NSString).dataUsingEncoding(NSUTF8StringEncoding)
@@ -58,6 +71,7 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
             let user = User.decode(json)
             
             MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+            */
             
             /*
             Manager.sharedInstance.defaultHeaders["Accept"] = "application/json"
@@ -110,16 +124,8 @@ class TripViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let name = trip.name
         
-        cell.textLabel?.text = name;
+        cell.textLabel.text = name;
         
         return cell
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let controller = segue.destinationViewController as RegionViewController
-        
-        var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
-        
-        let trip = self.items[selectedIndexPathRow]
     }
 }

@@ -7,3 +7,10 @@
 #import "MBProgressHUD.h"
 
 #import "AFNetworking.h"
+
+#import <Parse/Parse.h>
+#import <Parse/PFObject.h>
+#import <Parse/PFObject+Subclass.h>
+#import <ParseFacebookUtils/PFFacebookUtils.h>
+
+#import <Bolts/Bolts.h>

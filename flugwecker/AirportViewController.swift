@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Alamofire
 
 class AirportViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
@@ -26,9 +25,14 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tableView.addSubview(refreshControl)
         
-        let titleDict: NSDictionary = [NSForegroundColorAttributeName: UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0), NSFontAttributeName: UIFont(name: "Copperplate-Light", size: 20.0)]
+        let color = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
         
-        self.navigationController?.navigationBar.titleTextAttributes = titleDict
+        if let font = UIFont(name: "Copperplate-Light", size: 16.0) {
+            
+            self.navigationController?.navigationBar.titleTextAttributes = [NSFontAttributeName: font,
+                NSForegroundColorAttributeName: color]
+        }
+        
         self.navigationController?.navigationBar.tintColor = UIColor(red: 4/255, green: 153/255, blue: 153/255, alpha: 1.0)
     }
     
@@ -50,26 +54,17 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         
-        let manager = AFHTTPRequestOperationManager()
-        manager.requestSerializer.setValue("application/json", forHTTPHeaderField: "Accept");
+        var findAirports:PFQuery = Airport.query()
+        findAirports.whereKey("country", equalTo: "DE")
+        findAirports.whereKey("originCounter", greaterThan: 0)
         
-        manager.GET("\(API_URL)/airports-inside/de",
-            parameters: nil,
-            success: { (operation: AFHTTPRequestOperation!,data: AnyObject!) in
+        findAirports.findObjectsInBackgroundWithBlock { (objects:[AnyObject]!, error:NSError!) -> Void in
+            if !(error != nil) {
                 
-                let json = JSON(data as NSDictionary!)
-
-                if json["airports"] {
-                    
-                    self.items.removeAll(keepCapacity: true)
-                    
-                    for jsonAirport in json["airports"].array!{
-                        let airport = Airport.decode(jsonAirport)
-                        
-                        if airport.counterFlights > 0 {
-                            self.items.append(airport)
-                        }
-                    }
+                self.items.removeAll(keepCapacity: true)
+                
+                for airport in objects as [Airport] {
+                    self.items.append(airport as Airport)
                 }
                 
                 self.tableView.reloadData()
@@ -80,10 +75,21 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
                 
                 MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
                 
-            },
-            failure: { (operation: AFHTTPRequestOperation!,error: NSError!) in
-                println("Error: " + error.localizedDescription)
-        });
+            } else {
+                
+                MBProgressHUD.hideAllHUDsForView(self.view, animated: true)
+                
+                let alertTitle = NSLocalizedString("Error", comment: "")
+                let okayString = NSLocalizedString("OK", comment: "")
+                
+                let alert = UIAlertView()
+                alert.title = alertTitle
+                alert.message = error.localizedDescription
+                
+                alert.addButtonWithTitle(okayString)
+                alert.show()
+            }
+        }
     }
 
     // MARK: - Table View
@@ -99,13 +105,13 @@ class AirportViewController: UIViewController, UITableViewDelegate, UITableViewD
         
         let name = airport.name
         
-        cell.textLabel?.text = name;
+        cell.textLabel.text = name;
         
         return cell
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject!) {
-        let controller = segue.destinationViewController as RegionViewController
+        let controller = segue.destinationViewController as FlightConnectionViewController
         
         var selectedIndexPathRow:Int = self.tableView.indexPathForSelectedRow()?.row as Int!
 

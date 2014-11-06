@@ -80,7 +80,7 @@ class KeyboardInputViewController: UIViewController, UITextFieldDelegate {
         
         if self.activeTextField != nil && CGRectIsNull(self.keyboardFrame) == false {
             var window = UIApplication.sharedApplication().keyWindow
-            var localKeyboardFrame = window.convertRect(self.keyboardFrame, toView: self.view)
+            var localKeyboardFrame = window!.convertRect(self.keyboardFrame, toView: self.view)
             var localKeyboardFrameMinY = Float(CGRectGetMinY(localKeyboardFrame))
             
             var textFieldBuffer = Float(120.0)
